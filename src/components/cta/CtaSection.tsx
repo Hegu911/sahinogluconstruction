@@ -8,7 +8,7 @@ export default function CtaSection() {
   const { ref, visible } = useScrollReveal(0.15);
 
   return (
-    <section ref={ref} className="py-14 lg:py-24 bg-paper/80 backdrop-blur-sm">
+    <section ref={ref} className="py-14 lg:py-24">
       <div
         className={`max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 py-14 lg:py-24 transition-all duration-700 ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"

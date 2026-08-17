@@ -22,7 +22,7 @@ export default function ProcessSection() {
   const { ref, visible } = useScrollReveal(0.1);
 
   return (
-    <section ref={ref} className="bg-ink py-14 lg:py-24">
+    <section ref={ref} className="bg-ink/80 backdrop-blur-sm py-14 lg:py-24">
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
         <div className="mb-10 lg:mb-14">
           <div className="label !text-bronze-light mb-3">İş Prosesi</div>

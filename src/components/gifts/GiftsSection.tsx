@@ -19,7 +19,7 @@ export default function GiftsSection() {
   const { ref, visible } = useScrollReveal(0.1);
 
   return (
-    <section ref={ref} className="py-10 lg:py-16 bg-paper/80 backdrop-blur-sm">
+    <section ref={ref} className="py-10 lg:py-16">
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
         <div className="mb-6 lg:mb-10">
           <div className="label mb-2">Xüsusi Təkliflər</div>
@@ -30,7 +30,7 @@ export default function GiftsSection() {
           {gifts.map((card, i) => (
             <div
               key={card.title}
-              className={`shrink-0 w-[260px] sm:w-auto sm:flex-1 border border-border p-5 lg:p-6 transition-all duration-700 hover:border-bronze bg-paper/60 backdrop-blur-sm ${
+              className={`shrink-0 w-[260px] sm:w-auto sm:flex-1 border border-border/50 p-5 lg:p-6 transition-all duration-700 hover:border-bronze bg-paper/40 backdrop-blur-sm ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
               }`}
               style={{ transitionDelay: `${i * 80}ms` }}

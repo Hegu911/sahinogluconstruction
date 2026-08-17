@@ -31,7 +31,7 @@ export default function BeforeAfterSection() {
   }, []);
 
   return (
-    <section ref={ref} className="bg-ink">
+    <section ref={ref} className="bg-ink/80 backdrop-blur-sm">
       <div className="max-w-[1400px] mx-auto">
         <div
           className={`px-5 sm:px-8 lg:px-10 py-10 lg:py-16 transition-all duration-700 ${

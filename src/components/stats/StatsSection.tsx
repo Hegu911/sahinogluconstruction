@@ -14,7 +14,7 @@ export default function StatsSection() {
   const { ref, visible } = useScrollReveal(0.15);
 
   return (
-    <section ref={ref} className="bg-ink">
+    <section ref={ref} className="bg-ink/80 backdrop-blur-sm">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2">
         <div className="relative min-h-[200px] sm:min-h-[260px] lg:min-h-[400px]">
           <img

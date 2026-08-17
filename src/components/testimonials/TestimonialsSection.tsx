@@ -7,7 +7,7 @@ export default function TestimonialsSection() {
   const { ref, visible } = useScrollReveal(0.1);
 
   return (
-    <section ref={ref} className="py-14 lg:py-24 bg-paper/60 backdrop-blur-sm">
+    <section ref={ref} className="py-14 lg:py-24">
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
         <div className="mb-8 lg:mb-12">
           <div className="label mb-3">Rəylər</div>
@@ -22,7 +22,7 @@ export default function TestimonialsSection() {
           {TESTIMONIALS.map((t, i) => (
             <div
               key={t.name}
-              className={`bg-paper/80 p-6 lg:p-8 flex flex-col transition-all duration-700 ${
+              className={`bg-paper/40 backdrop-blur-sm p-6 lg:p-8 flex flex-col transition-all duration-700 ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
               style={{ transitionDelay: `${i * 100}ms` }}

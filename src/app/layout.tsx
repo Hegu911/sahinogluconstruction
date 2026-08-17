@@ -178,7 +178,12 @@ export default function RootLayout({
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            opacity: 0.06,
+          }}
+        />
+        <div
+          className="fixed inset-0 z-[1] pointer-events-none"
+          style={{
+            background: "linear-gradient(180deg, rgba(240,235,227,0.85) 0%, rgba(240,235,227,0.75) 50%, rgba(240,235,227,0.9) 100%)",
           }}
         />
         <div className="relative z-10">{children}</div>
