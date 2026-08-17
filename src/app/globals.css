@@ -33,15 +33,15 @@
 
   body {
     font-family: var(--font-body);
-    background-color: var(--color-paper);
-    color: var(--color-ink);
+    background-color: var(--color-ink);
+    color: var(--color-paper);
     line-height: 1.6;
     overflow-x: hidden;
   }
 
   ::selection {
     background-color: var(--color-bronze);
-    color: var(--color-paper);
+    color: var(--color-ink);
   }
 
   img {
@@ -53,15 +53,15 @@
 @layer components {
   .heading-display {
     font-family: var(--font-heading);
-    font-size: clamp(2rem, 5.5vw, 4rem);
+    font-size: clamp(2.5rem, 6vw, 5rem);
     line-height: 0.95;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     font-weight: 400;
   }
 
   .heading-xl {
     font-family: var(--font-heading);
-    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-size: clamp(1.75rem, 4vw, 3rem);
     line-height: 1.05;
     letter-spacing: -0.02em;
     font-weight: 400;
@@ -69,7 +69,7 @@
 
   .heading-lg {
     font-family: var(--font-heading);
-    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
     line-height: 1.15;
     letter-spacing: -0.015em;
     font-weight: 400;
@@ -87,7 +87,7 @@
     font-family: var(--font-body);
     font-size: 0.625rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--color-bronze);
   }
@@ -104,92 +104,53 @@
     color: var(--color-text-secondary);
   }
 
-  .editorial-rule {
-    width: 100%;
-    height: 1px;
-    background-color: var(--color-border);
-  }
-
   .btn-fill {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.625rem 1.5rem;
+    padding: 0.875rem 2rem;
     background-color: var(--color-bronze);
-    color: var(--color-paper);
+    color: var(--color-ink);
     font-family: var(--font-body);
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.75rem;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     border: none;
-    border-radius: 1px;
+    border-radius: 100px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     text-decoration: none;
   }
 
   .btn-fill:hover {
-    background-color: var(--color-bronze-dark);
+    background-color: var(--color-bronze-light);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(196, 154, 108, 0.3);
   }
 
   .btn-ghost {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.625rem 1.5rem;
+    padding: 0.875rem 2rem;
     background-color: transparent;
-    color: var(--color-bronze);
+    color: var(--color-paper);
     font-family: var(--font-body);
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.75rem;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    border: 1px solid var(--color-bronze);
-    border-radius: 1px;
+    border: 1px solid rgba(250,250,247,0.2);
+    border-radius: 100px;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
   }
 
   .btn-ghost:hover {
-    background-color: var(--color-bronze);
-    color: var(--color-paper);
-  }
-
-  .btn-ghost-light {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.625rem 1.5rem;
-    background-color: transparent;
-    color: var(--color-paper);
-    font-family: var(--font-body);
-    font-weight: 500;
-    font-size: 0.75rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    border: 1px solid rgba(240,235,227,0.3);
-    border-radius: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-  }
-
-  .btn-ghost-light:hover {
-    background-color: var(--color-paper);
-    color: var(--color-ink);
-  }
-
-  .scroll-reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .scroll-reveal.revealed {
-    opacity: 1;
-    transform: translateY(0);
+    background-color: rgba(250,250,247,0.1);
+    border-color: rgba(250,250,247,0.4);
   }
 
   .scrollbar-hide::-webkit-scrollbar {
@@ -202,5 +163,24 @@
 
   .safe-area-pb {
     padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-fade-in-delay {
+    animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delay-2 {
+    animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+    opacity: 0;
   }
 }

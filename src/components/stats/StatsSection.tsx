@@ -14,7 +14,7 @@ export default function StatsSection() {
   const { ref, visible } = useScrollReveal(0.15);
 
   return (
-    <section ref={ref} className="bg-ink/80 backdrop-blur-sm">
+    <section ref={ref} className="bg-ink">
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2">
         <div className="relative min-h-[200px] sm:min-h-[260px] lg:min-h-[400px]">
           <img
@@ -22,10 +22,11 @@ export default function StatsSection() {
             alt="Tikinti prosesi"
             className="absolute inset-0 w-full h-full object-cover"
           />
+          <div className="absolute inset-0 bg-ink/30" />
         </div>
 
         <div className="flex flex-col justify-center px-5 sm:px-8 lg:px-14 py-8 lg:py-14">
-          <div className="space-y-5 lg:space-y-7">
+          <div className="space-y-6 lg:space-y-8">
             {stats.map((item, i) => (
               <div
                 key={item.label}
@@ -41,7 +42,7 @@ export default function StatsSection() {
                   <span className="font-heading text-2xl sm:text-3xl lg:text-4xl text-bronze shrink-0 font-normal">
                     {item.num}
                   </span>
-                  <span className="text-[0.75rem] sm:text-[0.8125rem] text-text-muted leading-snug">
+                  <span className="text-[0.75rem] sm:text-[0.8125rem] text-paper/30 leading-snug">
                     {item.label}
                   </span>
                 </div>

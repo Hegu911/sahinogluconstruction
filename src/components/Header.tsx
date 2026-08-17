@@ -30,18 +30,18 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-paper/40 backdrop-blur-md ${
-          scrolled ? "shadow-[0_1px_0_var(--color-border)]" : ""
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled ? "bg-ink/90 backdrop-blur-xl border-b border-paper/5" : "bg-transparent"
         }`}
       >
         <div className="max-w-[1400px] mx-auto flex items-center justify-between px-5 sm:px-8 lg:px-10 h-16 lg:h-20">
-          <Link href="/" className="font-heading text-base lg:text-lg tracking-tight text-ink font-normal uppercase">
+          <Link href="/" className="font-heading text-base lg:text-lg tracking-tight text-paper font-normal uppercase">
             Şahinoğlu
           </Link>
 
           <a
             href={`tel:${COMPANY.phoneRaw}`}
-            className="lg:hidden flex items-center gap-1.5 text-ink"
+            className="lg:hidden flex items-center gap-1.5 text-paper/70"
           >
             <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
@@ -55,7 +55,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={`text-[0.75rem] font-medium transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-[-3px] after:left-0 after:w-0 after:h-[1px] after:bg-bronze after:transition-all after:duration-300 hover:after:w-full ${
-                  pathname === link.href ? "text-ink after:w-full" : "text-text-secondary hover:text-ink"
+                  pathname === link.href ? "text-paper after:w-full" : "text-paper/40 hover:text-paper"
                 }`}
               >
                 {link.label}
@@ -66,24 +66,24 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-5">
             <a
               href={`tel:${COMPANY.phoneRaw}`}
-              className="text-[0.75rem] font-medium text-ink tracking-wide hover:text-bronze transition-colors"
+              className="text-[0.75rem] font-medium text-paper/50 tracking-wide hover:text-bronze transition-colors"
             >
               {COMPANY.phone}
             </a>
-            <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-fill !py-2 !px-4 !text-[0.6875rem]">
+            <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-fill !py-2.5 !px-5 !text-[0.6875rem]">
               Əlaqə saxla
             </a>
           </div>
         </div>
       </header>
 
-      <nav className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-paper/40 backdrop-blur-md border-t border-border/50 safe-area-pb">
+      <nav className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-ink/90 backdrop-blur-xl border-t border-paper/5 safe-area-pb">
         <div className="flex items-center justify-around h-[3.25rem]">
           {BOTTOM_NAV.map((item) => {
             const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
-            const color = isActive ? "var(--color-bronze)" : "var(--color-text-muted)";
+            const color = isActive ? "var(--color-bronze)" : "rgba(250,250,247,0.3)";
             const content = (
-              <div className={`flex flex-col items-center gap-[2px] transition-colors ${isActive ? "text-bronze" : "text-text-muted"}`}>
+              <div className={`flex flex-col items-center gap-[2px] transition-colors ${isActive ? "text-bronze" : "text-paper/30"}`}>
                 {item.icon(color)}
                 <span className="text-[0.5625rem] font-medium tracking-wide">{item.label}</span>
               </div>

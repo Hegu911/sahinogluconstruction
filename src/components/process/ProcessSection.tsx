@@ -2,12 +2,7 @@
 
 import { PROCESS_STEPS } from "@/lib/data";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import {
-  ProcessFoundationIcon,
-  ProcessFrameIcon,
-  ProcessFinishIcon,
-  ProcessKeyIcon,
-} from "@/components/icons/Icons";
+import { ProcessFoundationIcon, ProcessFrameIcon, ProcessFinishIcon, ProcessKeyIcon } from "@/components/icons/Icons";
 
 const stepIcons = [ProcessFoundationIcon, ProcessFrameIcon, ProcessFinishIcon, ProcessKeyIcon];
 
@@ -22,48 +17,47 @@ export default function ProcessSection() {
   const { ref, visible } = useScrollReveal(0.1);
 
   return (
-    <section ref={ref} className="bg-ink/80 backdrop-blur-sm py-14 lg:py-24">
+    <section ref={ref} className="py-14 lg:py-24 bg-paper">
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
         <div className="mb-10 lg:mb-14">
-          <div className="label !text-bronze-light mb-3">İş Prosesi</div>
-          <h2 className="heading-xl text-paper">
+          <div className="label mb-3">İş Prosesi</div>
+          <h2 className="heading-xl text-ink">
             Dörd addımda
             <br />
-            <span className="italic text-bronze-light">açar təhvil</span>
+            <span className="italic text-bronze">açar təhvil</span>
           </h2>
         </div>
 
         <div className="space-y-0">
           {PROCESS_STEPS.map((step, i) => {
             const StepIcon = stepIcons[i];
-            const isDark = i % 2 === 0;
             return (
               <div
                 key={step.step}
-                className={`border-t border-ink-light transition-all duration-700 ${
+                className={`border-t border-border/50 transition-all duration-700 ${
                   visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
                 }`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-0">
                   <div className="lg:col-span-2 py-5 lg:py-7 flex items-center gap-3 lg:flex-col lg:items-start lg:gap-2">
-                    <span className={`font-heading text-2xl lg:text-3xl font-normal ${isDark ? "text-bronze/25" : "text-bronze/40"}`}>
+                    <span className="font-heading text-2xl lg:text-3xl text-bronze/20 font-normal">
                       {step.step}
                     </span>
-                    <StepIcon className={`w-4 h-4 lg:mt-1 ${isDark ? "text-bronze/50" : "text-bronze"}`} />
+                    <StepIcon className="w-4 h-4 text-bronze/40 lg:mt-1" />
                   </div>
 
-                  <div className={`lg:col-span-4 py-0 lg:py-7 lg:px-8 flex flex-col justify-center ${!isDark ? "lg:bg-paper/10 lg:backdrop-blur-sm" : ""}`}>
-                    <h3 className="heading-md text-paper mb-1.5">{step.title}</h3>
-                    <p className="text-[0.8125rem] text-text-muted leading-relaxed mb-1.5">
+                  <div className="lg:col-span-4 py-0 lg:py-7 lg:px-8 flex flex-col justify-center">
+                    <h3 className="heading-md text-ink mb-1.5">{step.title}</h3>
+                    <p className="text-[0.8125rem] text-text-secondary leading-relaxed mb-1.5">
                       {step.description}
                     </p>
-                    <span className="text-[0.65rem] font-medium tracking-[0.08em] uppercase text-bronze-light">
+                    <span className="text-[0.65rem] font-medium tracking-[0.08em] uppercase text-bronze">
                       {step.duration}
                     </span>
                   </div>
 
-                  <div className="lg:col-span-6 relative min-h-[140px] sm:min-h-[180px] lg:min-h-[200px] overflow-hidden">
+                  <div className="lg:col-span-6 relative min-h-[140px] sm:min-h-[180px] lg:min-h-[200px] overflow-hidden rounded-2xl">
                     <img
                       src={images[i]}
                       alt={step.title}
