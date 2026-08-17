@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? "bg-surface/95 backdrop-blur-md shadow-sm" : "bg-transparent"}`}>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-surface/95 backdrop-blur-md shadow-sm" : "bg-transparent"}`}>
         <div className="max-w-[1200px] mx-auto flex items-center justify-between px-5 sm:px-8 lg:px-10 h-16 lg:h-20">
           <Link href="/" className="flex items-center gap-2.5">
             <img src="/image.png" alt="Şahinoğlu" className="w-8 h-8 lg:w-10 lg:h-10 rounded object-cover" />

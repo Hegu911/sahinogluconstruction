@@ -5,7 +5,7 @@ import { COMPANY } from "@/lib/data";
 
 export default function HeroSection() {
   return (
-    <section className="min-h-[100dvh] flex items-center pt-20 lg:pt-0">
+    <section className="min-h-[100dvh] flex items-center pt-28 pb-10 lg:pt-24 lg:pb-0">
       <div className="max-w-[1200px] mx-auto w-full px-5 sm:px-8 lg:px-10">
         <div className="grid items-center gap-10 lg:gap-20 lg:grid-cols-12">
 
@@ -43,7 +43,7 @@ export default function HeroSection() {
             <img
               src="/image.png"
               alt="Şahinoğlu Construction"
-              className="w-full h-[260px] lg:h-[420px] object-cover rounded-lg"
+              className="w-full h-[260px] lg:h-[420px] object-cover rounded-lg shadow-lg"
             />
           </div>
 

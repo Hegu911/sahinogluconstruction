@@ -19,7 +19,7 @@ export default function ProjectsSection() {
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-rule">
           {PROJECTS.map((project, i) => (
-            <Link key={project.id} href={`/layiheler/${project.id}`} className={`group bg-surface transition-colors ${visible ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: `${i * 60}ms` }}>
+            <Link key={project.id} href={`/layiheler/${project.id}`} className={`group bg-surface transition-all hover:shadow-md ${visible ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: `${i * 60}ms` }}>
               <div className="aspect-[4/3] bg-surface-light overflow-hidden">
                 <img src={project.heroImage} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>

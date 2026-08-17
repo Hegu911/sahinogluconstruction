@@ -21,7 +21,7 @@ export default function ProcessSection() {
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-rule">
           {steps.map((step, i) => (
-            <div key={step.num} className={`bg-surface p-5 lg:p-6 transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: `${i * 80}ms` }}>
+            <div key={step.num} className={`bg-surface p-5 lg:p-6 transition-all duration-300 hover:shadow-sm ${visible ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: `${i * 80}ms` }}>
               <span className="font-heading text-xl text-accent">{step.num}</span>
               <h3 className="font-heading text-[0.9375rem] text-text-primary mt-2 mb-1.5">{step.title}</h3>
               <p className="text-[0.75rem] text-text-secondary leading-relaxed">{step.text}</p>

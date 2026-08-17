@@ -20,7 +20,7 @@ export default function TestimonialsSection() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-rule">
           {testimonials.map((t, i) => (
-            <div key={t.name} className={`bg-surface p-5 transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: `${i * 80}ms` }}>
+            <div key={t.name} className={`bg-surface p-5 transition-all duration-300 hover:shadow-sm ${visible ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: `${i * 80}ms` }}>
               <p className="text-[0.8125rem] text-text-secondary leading-relaxed mb-4">&ldquo;{t.text}&rdquo;</p>
               <div className="flex items-center gap-3">
                 <div className="w-7 h-7 bg-surface-light border border-rule rounded flex items-center justify-center text-[0.5625rem] font-medium text-accent">{t.avatar}</div>

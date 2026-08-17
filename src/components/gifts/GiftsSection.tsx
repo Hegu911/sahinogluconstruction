@@ -24,7 +24,7 @@ export default function GiftsSection() {
         </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-rule">
           {gifts.map((card, i) => (
-            <div key={card.title} className={`bg-surface p-5 lg:p-6 transition-all duration-300 hover:bg-surface-light ${visible ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: `${i * 60}ms` }}>
+            <div key={card.title} className={`bg-surface p-5 lg:p-6 transition-all duration-300 hover:bg-surface-light hover:shadow-sm ${visible ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: `${i * 60}ms` }}>
               <div className="flex items-center gap-2 mb-3">
                 <card.Icon className="w-3.5 h-3.5 text-accent" />
                 <span className="text-[0.5625rem] text-text-muted font-medium">{card.num}</span>

@@ -6,7 +6,7 @@ export default function CtaSection() {
   return (
     <section className="py-12 lg:py-20 bg-surface">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-10">
-        <div className="bg-accent p-8 lg:p-12">
+        <div className="bg-accent p-8 lg:p-12 shadow-lg">
           <div className="max-w-[480px]">
             <div className="text-[0.625rem] font-medium tracking-[0.1em] uppercase text-white/60 mb-3">Başlayaq</div>
             <h2 className="heading-xl text-white">Arzunuzdakı evi birlikdə <span className="text-white/80">tikək</span></h2>
