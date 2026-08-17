@@ -171,21 +171,6 @@ export default function RootLayout({
         />
       </head>
       <body className="pb-14 lg:pb-0">
-        <div
-          className="fixed inset-0 z-0 pointer-events-none"
-          style={{
-            backgroundImage: "url(/image.png)",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-          }}
-        />
-        <div
-          className="fixed inset-0 z-[1] pointer-events-none"
-          style={{
-            background: "linear-gradient(180deg, rgba(240,235,227,0.85) 0%, rgba(240,235,227,0.75) 50%, rgba(240,235,227,0.9) 100%)",
-          }}
-        />
         <div className="relative z-10">{children}</div>
       </body>
     </html>
