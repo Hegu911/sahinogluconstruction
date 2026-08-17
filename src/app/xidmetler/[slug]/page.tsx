@@ -39,12 +39,11 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
               <Link href="/xidmetler" className="hover:text-accent transition-colors">Xidmətlər</Link><span>/</span>
               <span className="text-text-secondary">{service.title}</span>
             </nav>
-
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14">
               <div className="lg:col-span-7">
                 <div className="label mb-3">{service.title}</div>
                 <h1 className="heading-xl text-text-primary mb-6">{service.title}</h1>
-                <p className="text-[0.875rem] text-text-secondary mb-8 max-w-[520px] leading-relaxed">{service.fullDescription}</p>
+                <p className="text-[0.9375rem] text-text-secondary mb-8 max-w-[520px] leading-relaxed">{service.fullDescription}</p>
                 <div className="w-full h-px bg-rule mb-8" />
                 <h3 className="heading-lg text-text-primary mb-4">Xidmətə daxildir</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
@@ -60,26 +59,25 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                   <a href="tel:+994705552726" className="btn-secondary">Zəng Et</a>
                 </div>
               </div>
-
               <div className="lg:col-span-4 lg:col-start-9">
                 <div className="sticky top-24 space-y-6">
-                  <div className="bg-surface-alt p-6 rounded-xl card-shadow">
-                    <div className="label mb-4">Zəmanət</div>
+                  <div className="bg-surface-blue p-6 rounded-xl card-shadow-blue">
+                    <div className="label-light mb-4">Zəmanət</div>
                     <div className="space-y-3">
-                      <div className="flex items-start gap-2.5"><ShieldIcon className="w-5 h-5 text-accent shrink-0 mt-0.5" /><div><div className="text-[0.875rem] font-medium text-text-primary">10 il struktur zəmanəti</div><div className="text-[0.75rem] text-text-muted mt-0.5">Bünövrə və konstruksiya</div></div></div>
-                      <div className="flex items-start gap-2.5"><CalendarIcon className="w-5 h-5 text-accent shrink-0 mt-0.5" /><div><div className="text-[0.875rem] font-medium text-text-primary">3 il tam təmir zəmanəti</div><div className="text-[0.75rem] text-text-muted mt-0.5">Daxili bitirmə işləri</div></div></div>
+                      <div className="flex items-start gap-2.5"><ShieldIcon className="w-5 h-5 text-accent-light shrink-0 mt-0.5" /><div><div className="text-[0.875rem] font-medium text-white">10 il struktur zəmanəti</div><div className="text-[0.75rem] text-text-muted-blue mt-0.5">Bünövrə və konstruksiya</div></div></div>
+                      <div className="flex items-start gap-2.5"><CalendarIcon className="w-5 h-5 text-accent-light shrink-0 mt-0.5" /><div><div className="text-[0.875rem] font-medium text-white">3 il tam təmir zəmanəti</div><div className="text-[0.75rem] text-text-muted-blue mt-0.5">Daxili bitirmə işləri</div></div></div>
                     </div>
                   </div>
                   {relatedProjects.length > 0 && (
-                    <div className="bg-surface-alt p-6 rounded-xl card-shadow">
-                      <div className="label mb-4">Əlaqəli Layihələr</div>
+                    <div className="bg-surface-blue p-6 rounded-xl card-shadow-blue">
+                      <div className="label-light mb-4">Əlaqəli Layihələr</div>
                       <div className="space-y-3">
                         {relatedProjects.map((p) => (
-                          <Link key={p.id} href={`/layiheler/${p.id}`} className="flex items-center gap-3 group hover:bg-surface p-2 rounded-lg transition-colors">
+                          <Link key={p.id} href={`/layiheler/${p.id}`} className="flex items-center gap-3 group hover:bg-white/5 p-2 rounded-lg transition-colors">
                             <img src={p.heroImage} alt={p.title} className="w-14 h-10 object-cover rounded-lg shrink-0" />
                             <div>
-                              <div className="text-[0.8125rem] font-medium text-text-primary group-hover:text-accent transition-colors">{p.title}</div>
-                              <div className="flex items-center gap-1 text-[0.6875rem] text-text-muted mt-0.5"><MapPinIcon className="w-3.5 h-3.5" />{p.location}</div>
+                              <div className="text-[0.8125rem] font-medium text-white group-hover:text-accent-light transition-colors">{p.title}</div>
+                              <div className="flex items-center gap-1 text-[0.6875rem] text-text-muted-blue mt-0.5"><MapPinIcon className="w-3.5 h-3.5" />{p.location}</div>
                             </div>
                           </Link>
                         ))}

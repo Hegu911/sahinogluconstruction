@@ -34,15 +34,15 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
       <main className="pt-16 lg:pt-20">
         <section className="relative h-[35vh] sm:h-[40vh] lg:h-[45vh] min-h-[240px]">
           <img src={project.heroImage} alt={project.title} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-surface-blue via-surface-blue/50 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 lg:p-10 max-w-[1200px] mx-auto">
-            <nav className="flex items-center gap-1.5 text-[0.625rem] text-text-muted mb-3">
-              <Link href="/" className="hover:text-accent transition-colors">Ana Səhifə</Link><span>/</span>
-              <Link href="/layiheler" className="hover:text-accent transition-colors">Layihələr</Link><span>/</span>
-              <span className="text-text-secondary">{project.title}</span>
+            <nav className="flex items-center gap-1.5 text-[0.625rem] text-text-muted-blue mb-3">
+              <Link href="/" className="hover:text-white transition-colors">Ana Səhifə</Link><span className="text-white/30">/</span>
+              <Link href="/layiheler" className="hover:text-white transition-colors">Layihələr</Link><span className="text-white/30">/</span>
+              <span className="text-white/60">{project.title}</span>
             </nav>
-            <div className="flex items-center gap-1 text-text-muted text-[0.625rem] mb-1.5"><MapPinIcon className="w-3.5 h-3.5" />{project.location}</div>
-            <h1 className="heading-xl text-text-primary">{project.title}</h1>
+            <div className="flex items-center gap-1 text-text-muted-blue text-[0.625rem] mb-1.5"><MapPinIcon className="w-3.5 h-3.5" />{project.location}</div>
+            <h1 className="heading-xl text-white">{project.title}</h1>
           </div>
         </section>
 
@@ -64,24 +64,23 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                 <div className="grid grid-cols-2 gap-3">
                   <div className="aspect-[4/3] rounded-xl relative overflow-hidden card-shadow">
                     <img src={project.beforeImage} alt="Əvvəl" className="w-full h-full object-cover" />
-                    <span className="absolute top-3 left-3 px-2 py-0.5 bg-surface/80 text-[0.5625rem] font-medium tracking-[0.08em] uppercase text-text-primary rounded-lg">Əvvəl</span>
+                    <span className="absolute top-3 left-3 px-2 py-0.5 bg-surface-blue/80 text-[0.5625rem] font-medium tracking-[0.08em] uppercase text-white rounded-lg">Əvvəl</span>
                   </div>
                   <div className="aspect-[4/3] rounded-xl relative overflow-hidden card-shadow">
                     <img src={project.afterImage} alt="Sonra" className="w-full h-full object-cover" />
-                    <span className="absolute top-3 left-3 px-2 py-0.5 bg-surface/80 text-[0.5625rem] font-medium tracking-[0.08em] uppercase text-text-primary rounded-lg">Sonra</span>
+                    <span className="absolute top-3 left-3 px-2 py-0.5 bg-surface-blue/80 text-[0.5625rem] font-medium tracking-[0.08em] uppercase text-white rounded-lg">Sonra</span>
                   </div>
                 </div>
               </div>
-
               <div className="lg:col-span-4">
                 <div className="sticky top-24">
-                  <div className="bg-surface-alt p-6 rounded-xl card-shadow">
-                    <div className="label mb-4">Layihə Məlumatları</div>
+                  <div className="bg-surface-blue p-6 rounded-xl card-shadow-blue">
+                    <div className="label-light mb-4">Layihə Məlumatları</div>
                     <div className="space-y-0">
                       {[{ label: "Sahə", value: `${project.area} m²` }, { label: "Otaq", value: `${project.rooms} otaq` }, { label: "İl", value: `${project.year}` }, { label: "Müddət", value: project.duration }, { label: "Yer", value: project.location }, { label: "Növ", value: project.category === "ferdi-ev" ? "Fərdi Ev" : project.category === "villa" ? "Villa" : "Renovasiya" }].map((item) => (
-                        <div key={item.label} className="flex items-center justify-between py-2.5 border-b border-rule">
-                          <span className="text-[0.6875rem] font-medium text-text-muted uppercase tracking-wide">{item.label}</span>
-                          <span className="text-[0.875rem] font-medium text-text-primary">{item.value}</span>
+                        <div key={item.label} className="flex items-center justify-between py-2.5 border-b border-rule-blue">
+                          <span className="text-[0.6875rem] font-medium text-text-muted-blue uppercase tracking-wide">{item.label}</span>
+                          <span className="text-[0.875rem] font-medium text-white">{item.value}</span>
                         </div>
                       ))}
                     </div>
@@ -90,7 +89,6 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                 </div>
               </div>
             </div>
-
             {otherProjects.length > 0 && (
               <div className="mt-14 lg:mt-20 pt-8 lg:pt-10 border-t border-rule">
                 <h3 className="heading-lg text-text-primary mb-5">Oxşar layihələr</h3>

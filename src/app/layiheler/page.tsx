@@ -24,26 +24,26 @@ export default function ProjectsPage() {
     <>
       <Header />
       <main className="pt-16 lg:pt-20">
-        <section className="py-10 lg:py-20 bg-surface">
+        <section className="py-10 lg:py-20 bg-surface-blue">
           <div className="max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 mb-8 lg:mb-12">
               <div className="lg:col-span-8">
-                <div className="label mb-3">Layihələr</div>
-                <h1 className="heading-xl text-text-primary">Tamamlanmış<br /><span className="italic text-accent">obyektlər</span></h1>
+                <div className="label-light mb-3">Layihələr</div>
+                <h1 className="heading-xl text-white">Tamamlanmış<br /><span className="italic text-accent-light">obyektlər</span></h1>
               </div>
               <div className="lg:col-span-4 flex items-end">
-                <p className="text-[0.875rem] text-text-secondary">Hər layihənin öz hekayəsi var.</p>
+                <p className="text-[0.875rem] text-text-muted-blue">Hər layihənin öz hekayəsi var.</p>
               </div>
             </div>
             <div className="flex gap-1.5 mb-8 lg:mb-10 overflow-x-auto pb-1">
               {CATEGORIES.map((cat) => (
-                <button key={cat.slug} onClick={() => setActive(cat.slug)} className={`px-4 py-2 text-[0.75rem] font-medium tracking-[0.06em] uppercase border rounded-full transition-all shrink-0 ${active === cat.slug ? "bg-accent text-white border-accent" : "bg-transparent text-text-muted border-rule hover:border-text-muted"}`}>{cat.label}</button>
+                <button key={cat.slug} onClick={() => setActive(cat.slug)} className={`px-4 py-2 text-[0.75rem] font-medium tracking-[0.06em] uppercase border rounded-full transition-all shrink-0 ${active === cat.slug ? "bg-white text-surface-blue border-white" : "bg-transparent text-white/60 border-white/20 hover:border-white/50"}`}>{cat.label}</button>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="pb-10 lg:pb-20 bg-surface-alt">
+        <section className="pb-10 lg:pb-20 bg-surface">
           <div className="max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-10">
             <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
               {filtered.map((project, i) => (
@@ -55,11 +55,7 @@ export default function ProjectsPage() {
                       <div className="flex items-center gap-1 text-white/70 text-[0.625rem] mb-1.5"><MapPinIcon className="w-3.5 h-3.5" />{project.location}</div>
                       <h2 className="font-heading text-[1rem] text-white mb-1">{project.title}</h2>
                       <div className="flex items-center gap-2 text-[0.6875rem] text-white/50">
-                        <span>{project.area} m²</span>
-                        <span className="w-[1px] h-2.5 bg-white/30" />
-                        <span>{project.rooms} otaq</span>
-                        <span className="w-[1px] h-2.5 bg-white/30" />
-                        <span>{project.year}</span>
+                        <span>{project.area} m²</span><span className="w-[1px] h-2.5 bg-white/30" /><span>{project.rooms} otaq</span><span className="w-[1px] h-2.5 bg-white/30" /><span>{project.year}</span>
                       </div>
                     </div>
                   </div>
