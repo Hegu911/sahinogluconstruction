@@ -170,7 +170,16 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="pb-14 lg:pb-0">{children}</body>
+      <body className="pb-14 lg:pb-0">
+        <div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none">
+          <img
+            src="/image.png"
+            alt=""
+            className="w-[80vw] max-w-[700px] h-auto opacity-[0.06]"
+          />
+        </div>
+        <div className="relative z-10">{children}</div>
+      </body>
     </html>
   );
 }

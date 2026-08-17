@@ -30,10 +30,8 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-paper/95 backdrop-blur-sm shadow-[0_1px_0_var(--color-border)]"
-            : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-paper/80 backdrop-blur-md ${
+          scrolled ? "shadow-[0_1px_0_var(--color-border)]" : ""
         }`}
       >
         <div className="max-w-[1400px] mx-auto flex items-center justify-between px-5 sm:px-8 lg:px-10 h-16 lg:h-20">
@@ -83,7 +81,7 @@ export default function Header() {
         </div>
       </header>
 
-      <nav className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-paper/95 backdrop-blur-sm border-t border-border safe-area-pb">
+      <nav className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-paper/80 backdrop-blur-md border-t border-border safe-area-pb">
         <div className="flex items-center justify-around h-[3.25rem]">
           {BOTTOM_NAV.map((item) => {
             const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
