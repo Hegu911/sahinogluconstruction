@@ -3,6 +3,12 @@
 import { TESTIMONIALS } from "@/lib/data";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
+const cardBg = [
+  "bg-ink/70 backdrop-blur-sm border-ink-light/30",
+  "bg-paper/50 backdrop-blur-sm border-border/50",
+  "bg-ink/70 backdrop-blur-sm border-ink-light/30",
+];
+
 export default function TestimonialsSection() {
   const { ref, visible } = useScrollReveal(0.1);
 
@@ -18,34 +24,37 @@ export default function TestimonialsSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-border">
-          {TESTIMONIALS.map((t, i) => (
-            <div
-              key={t.name}
-              className={`bg-paper/40 backdrop-blur-sm p-6 lg:p-8 flex flex-col transition-all duration-700 ${
-                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-              }`}
-              style={{ transitionDelay: `${i * 100}ms` }}
-            >
-              <div className="font-heading text-3xl text-bronze/15 leading-none mb-3 font-normal">
-                &ldquo;
-              </div>
-              <p className="text-[0.8125rem] text-text-secondary leading-relaxed mb-6 flex-1">
-                {t.text}
-              </p>
-              <div className="flex items-center gap-2.5 pt-5 border-t border-border">
-                <img
-                  src={t.image}
-                  alt={t.name}
-                  className="w-8 h-8 rounded-full object-cover"
-                />
-                <div>
-                  <div className="text-[0.8125rem] font-medium text-ink">{t.name}</div>
-                  <div className="text-[0.6875rem] text-text-muted">{t.projectTitle}</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {TESTIMONIALS.map((t, i) => {
+            const isDark = i % 2 === 0;
+            return (
+              <div
+                key={t.name}
+                className={`border p-6 lg:p-8 flex flex-col transition-all duration-700 rounded-[1px] ${cardBg[i]} ${
+                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                }`}
+                style={{ transitionDelay: `${i * 100}ms` }}
+              >
+                <div className={`font-heading text-3xl leading-none mb-3 font-normal ${isDark ? "text-bronze/30" : "text-bronze/15"}`}>
+                  &ldquo;
+                </div>
+                <p className={`text-[0.8125rem] leading-relaxed mb-6 flex-1 ${isDark ? "text-paper/70" : "text-text-secondary"}`}>
+                  {t.text}
+                </p>
+                <div className={`flex items-center gap-2.5 pt-5 border-t ${isDark ? "border-ink-light/30" : "border-border/50"}`}>
+                  <img
+                    src={t.image}
+                    alt={t.name}
+                    className="w-8 h-8 rounded-full object-cover"
+                  />
+                  <div>
+                    <div className={`text-[0.8125rem] font-medium ${isDark ? "text-paper" : "text-ink"}`}>{t.name}</div>
+                    <div className={`text-[0.6875rem] ${isDark ? "text-paper/40" : "text-text-muted"}`}>{t.projectTitle}</div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

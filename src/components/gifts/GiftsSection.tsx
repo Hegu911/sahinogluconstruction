@@ -9,10 +9,10 @@ import {
 } from "@/components/icons/Icons";
 
 const gifts = [
-  { Icon: GiftDraftIcon, num: "01", title: "Layihə Hədiyyə", description: "Fərdi ev layihələndirməsi pulsuz — arzunuzdakı evi birlikdə dizayn edək." },
-  { Icon: GiftCalcIcon, num: "02", title: "Smeta Hədiyyə", description: "Dəqiq smeta hesablaması — tam şəffaf qiymət, gözlənilməz xərc yox." },
-  { Icon: GiftHeatIcon, num: "03", title: "Kombi Bizdən", description: "İstilik sistemi + kombi + quraşdırma — evinizin isti sistemi hədiyyə." },
-  { Icon: GiftHomeIcon, num: "04", title: "Açar Hazır Evlər", description: "Hazır villa və evlərimiz — seçin, daxil olun. Gözləməyə ehtiyac yox." },
+  { Icon: GiftDraftIcon, num: "01", title: "Layihə Hədiyyə", description: "Fərdi ev layihələndirməsi pulsuz — arzunuzdakı evi birlikdə dizayn edək.", dark: false },
+  { Icon: GiftCalcIcon, num: "02", title: "Smeta Hədiyyə", description: "Dəqiq smeta hesablaması — tam şəffaf qiymət, gözlənilməz xərc yox.", dark: true },
+  { Icon: GiftHeatIcon, num: "03", title: "Kombi Bizdən", description: "İstilik sistemi + kombi + quraşdırma — evinizin isti sistemi hədiyyə.", dark: false },
+  { Icon: GiftHomeIcon, num: "04", title: "Açar Hazır Evlər", description: "Hazır villa və evlərimiz — seçin, daxil olun. Gözləməyə ehtiyac yox.", dark: true },
 ];
 
 export default function GiftsSection() {
@@ -30,17 +30,19 @@ export default function GiftsSection() {
           {gifts.map((card, i) => (
             <div
               key={card.title}
-              className={`shrink-0 w-[260px] sm:w-auto sm:flex-1 border border-border/50 p-5 lg:p-6 transition-all duration-700 hover:border-bronze bg-paper/40 backdrop-blur-sm ${
-                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-              }`}
+              className={`shrink-0 w-[260px] sm:w-auto sm:flex-1 p-5 lg:p-6 transition-all duration-700 ${
+                card.dark
+                  ? "bg-ink/70 backdrop-blur-sm text-paper border border-ink-light/30"
+                  : "bg-paper/50 backdrop-blur-sm text-ink border border-border/50"
+              } ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               <div className="flex items-center gap-2 mb-3">
-                <card.Icon className="w-4 h-4 text-bronze" />
-                <span className="font-heading text-[0.65rem] text-text-muted font-normal">{card.num}</span>
+                <card.Icon className={`w-4 h-4 ${card.dark ? "text-bronze-light" : "text-bronze"}`} />
+                <span className={`font-heading text-[0.65rem] font-normal ${card.dark ? "text-paper/40" : "text-text-muted"}`}>{card.num}</span>
               </div>
-              <h3 className="font-heading text-sm lg:text-base text-ink mb-2 font-normal">{card.title}</h3>
-              <p className="text-[0.75rem] text-text-secondary leading-relaxed">
+              <h3 className={`font-heading text-sm lg:text-base mb-2 font-normal ${card.dark ? "text-paper" : "text-ink"}`}>{card.title}</h3>
+              <p className={`text-[0.75rem] leading-relaxed ${card.dark ? "text-paper/60" : "text-text-secondary"}`}>
                 {card.description}
               </p>
             </div>

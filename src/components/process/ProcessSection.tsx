@@ -36,6 +36,7 @@ export default function ProcessSection() {
         <div className="space-y-0">
           {PROCESS_STEPS.map((step, i) => {
             const StepIcon = stepIcons[i];
+            const isDark = i % 2 === 0;
             return (
               <div
                 key={step.step}
@@ -46,13 +47,13 @@ export default function ProcessSection() {
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-0">
                   <div className="lg:col-span-2 py-5 lg:py-7 flex items-center gap-3 lg:flex-col lg:items-start lg:gap-2">
-                    <span className="font-heading text-2xl lg:text-3xl text-bronze/25 font-normal">
+                    <span className={`font-heading text-2xl lg:text-3xl font-normal ${isDark ? "text-bronze/25" : "text-bronze/40"}`}>
                       {step.step}
                     </span>
-                    <StepIcon className="w-4 h-4 text-bronze/50 lg:mt-1" />
+                    <StepIcon className={`w-4 h-4 lg:mt-1 ${isDark ? "text-bronze/50" : "text-bronze"}`} />
                   </div>
 
-                  <div className="lg:col-span-4 py-0 lg:py-7 lg:px-8 flex flex-col justify-center">
+                  <div className={`lg:col-span-4 py-0 lg:py-7 lg:px-8 flex flex-col justify-center ${!isDark ? "lg:bg-paper/10 lg:backdrop-blur-sm" : ""}`}>
                     <h3 className="heading-md text-paper mb-1.5">{step.title}</h3>
                     <p className="text-[0.8125rem] text-text-muted leading-relaxed mb-1.5">
                       {step.description}

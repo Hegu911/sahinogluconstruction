@@ -12,6 +12,13 @@ const serviceIcons: Record<string, React.FC<{ className?: string }>> = {
   "acar-tehvil": KeyIcon,
 };
 
+const cardStyles = [
+  "bg-ink/70 backdrop-blur-sm border-ink-light/30 text-paper",
+  "bg-paper/50 backdrop-blur-sm border-border/50 text-ink",
+  "bg-ink/70 backdrop-blur-sm border-ink-light/30 text-paper",
+  "bg-paper/50 backdrop-blur-sm border-border/50 text-ink",
+];
+
 export default function ServicesSection() {
   const { ref, visible } = useScrollReveal(0.05);
 
@@ -40,27 +47,30 @@ export default function ServicesSection() {
         <div className="grid grid-cols-2 lg:hidden gap-3">
           {SERVICES.map((service, i) => {
             const Icon = serviceIcons[service.slug];
+            const isDark = i % 2 === 0;
             return (
               <Link
                 key={service.slug}
                 href={`/xidmetler/${service.slug}`}
-                className={`bg-paper-dark border border-border p-4 transition-all duration-700 hover:border-bronze group ${
-                  visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-                }`}
+                className={`border p-4 transition-all duration-700 group ${
+                  isDark
+                    ? "bg-ink/70 backdrop-blur-sm border-ink-light/30"
+                    : "bg-paper/50 backdrop-blur-sm border-border/50"
+                } ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
                 style={{ transitionDelay: `${i * 60}ms` }}
               >
                 {Icon && (
                   <div className="mb-3">
-                    <Icon className="w-5 h-5 text-bronze" />
+                    <Icon className={`w-5 h-5 ${isDark ? "text-bronze-light" : "text-bronze"}`} />
                   </div>
                 )}
-                <h3 className="font-heading text-sm text-ink group-hover:text-bronze transition-colors duration-300 mb-1.5 font-normal">
+                <h3 className={`font-heading text-sm group-hover:text-bronze transition-colors duration-300 mb-1.5 font-normal ${isDark ? "text-paper" : "text-ink"}`}>
                   {service.title}
                 </h3>
-                <p className="text-[0.6875rem] text-text-muted leading-snug line-clamp-2">
+                <p className={`text-[0.6875rem] leading-snug line-clamp-2 ${isDark ? "text-paper/60" : "text-text-muted"}`}>
                   {service.description}
                 </p>
-                <span className="inline-flex items-center gap-1 mt-3 text-[0.625rem] font-medium tracking-[0.06em] uppercase text-text-muted group-hover:text-bronze transition-all duration-300">
+                <span className={`inline-flex items-center gap-1 mt-3 text-[0.625rem] font-medium tracking-[0.06em] uppercase group-hover:text-bronze transition-all duration-300 ${isDark ? "text-paper/40" : "text-text-muted"}`}>
                   Ətraflı
                   <svg viewBox="0 0 16 16" className="w-2.5 h-2.5" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M3 8h10M10 4l3 4-3 4" />
@@ -76,7 +86,7 @@ export default function ServicesSection() {
             <Link
               key={service.slug}
               href={`/xidmetler/${service.slug}`}
-              className={`group grid grid-cols-12 gap-6 py-7 border-b border-border transition-all duration-700 ${
+              className={`group grid grid-cols-12 gap-6 py-7 border-b border-border/50 transition-all duration-700 ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
               }`}
               style={{ transitionDelay: `${i * 60}ms` }}
