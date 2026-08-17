@@ -7,7 +7,7 @@ export default function HeroSection() {
   const wa = COMPANY.whatsapp;
 
   return (
-    <section className="relative min-h-[100dvh] flex items-center pt-20 lg:pt-0">
+    <section className="relative min-h-[100dvh] flex items-center pt-24 lg:pt-20">
       <div className="absolute top-1/3 left-1/4 w-80 h-80 rounded-full bg-bronze/5 blur-[100px]" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto w-full px-5 sm:px-8 lg:px-10">
