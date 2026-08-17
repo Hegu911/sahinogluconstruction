@@ -49,19 +49,11 @@ export default function HeroSection() {
           </div>
 
           <div className="order-1 lg:order-2 relative">
-            <div className="relative">
+            <div className="relative max-w-md mx-auto lg:max-w-none">
               <div className="absolute -inset-3 rounded-[1.5rem] bg-gradient-to-br from-bronze/8 to-transparent blur-xl" />
               <div className="relative overflow-hidden rounded-[1rem] border border-white/8 shadow-2xl">
-                <img src="/image.png" alt="Şahinoğlu Construction" className="w-full object-cover min-h-[280px] lg:min-h-[480px]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-              </div>
-              <div className="absolute -left-3 top-1/4 hidden lg:flex items-center gap-2 rounded-full bg-ink/80 backdrop-blur-xl border border-white/8 px-3 py-2 shadow-xl">
-                <div className="w-1.5 h-1.5 rounded-full bg-bronze animate-pulse" />
-                <span className="text-[0.5625rem] font-medium text-white/60">14+ il təcrübə</span>
-              </div>
-              <div className="absolute -right-3 bottom-1/4 hidden lg:flex items-center gap-2 rounded-full bg-ink/80 backdrop-blur-xl border border-white/8 px-3 py-2 shadow-xl">
-                <svg className="w-3 h-3 text-bronze" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><path d="M22 4L12 14.01l-3-3" /></svg>
-                <span className="text-[0.5625rem] font-medium text-white/60">127+ obyekt</span>
+                <img src="/image.png" alt="Şahinoğlu Construction" className="w-full object-cover h-[280px] lg:h-[400px]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
               </div>
             </div>
           </div>
