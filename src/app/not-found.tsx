@@ -8,7 +8,7 @@ export default function NotFound() {
       <Header />
       <main className="pt-16 lg:pt-20 flex items-center justify-center min-h-screen">
         <div className="text-center px-5 py-16">
-          <div className="font-heading text-[5rem] sm:text-[7rem] lg:text-[9rem] leading-[0.85] text-surface-lighter select-none">
+          <div className="font-heading text-[5rem] sm:text-[7rem] lg:text-[9rem] leading-[0.85] text-surface-alt select-none">
             404
           </div>
           <h1 className="heading-md text-text-primary -mt-2 mb-3">Səhifə tapılmadı</h1>

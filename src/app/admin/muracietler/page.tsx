@@ -24,11 +24,11 @@ export default function AdminMessagesPage() {
         {messages.length === 0 ? (
           <div className="py-12 text-center border-t border-border"><p className="text-[0.8125rem] text-text-muted">Müraciət yoxdur</p></div>
         ) : messages.map((m) => (
-          <div key={m.id} className={`p-4 bg-surface-light border-b border-border ${m.read ? "" : "border-l-2 border-l-accent"}`}>
+          <div key={m.id} className={`p-4 bg-surface-alt border-b border-border ${m.read ? "" : "border-l-2 border-l-accent"}`}>
             <div className="flex items-start justify-between mb-2">
               <div className="flex items-center gap-2">
                 <span className="text-[0.8125rem] font-medium text-text-primary">{m.name}</span>
-                <span className="text-[0.6rem] px-1.5 py-0.5 bg-surface-lighter text-text-muted rounded-[1px]">{m.projectType}</span>
+                <span className="text-[0.6rem] px-1.5 py-0.5 bg-surface-alt text-text-muted rounded-[1px]">{m.projectType}</span>
                 {!m.read && <span className="w-1.5 h-1.5 bg-accent rounded-full" />}
               </div>
               <span className="text-[0.6rem] text-text-muted">{m.date}</span>

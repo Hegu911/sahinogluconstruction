@@ -41,7 +41,7 @@ export default function ServicesPage() {
                 <Link
                   key={service.slug}
                   href={`/xidmetler/${service.slug}`}
-                  className={`group grid grid-cols-1 sm:grid-cols-12 gap-1 sm:gap-4 lg:gap-6 py-5 lg:py-7 border-b border-rule transition-all duration-700 hover:bg-surface-lighter/50 ${
+                  className={`group grid grid-cols-1 sm:grid-cols-12 gap-1 sm:gap-4 lg:gap-6 py-5 lg:py-7 border-b border-rule transition-all duration-700 hover:bg-surface-alt/50 ${
                     visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
                   }`}
                   style={{ transitionDelay: `${i * 60}ms` }}
@@ -58,7 +58,7 @@ export default function ServicesPage() {
                     <p className="body-sm text-[0.8125rem] text-text-muted">{service.description}</p>
                     <div className="flex flex-wrap gap-1.5 mt-2">
                       {service.features.slice(0, 3).map((f) => (
-                        <span key={f} className="text-[0.65rem] px-2 py-0.5 bg-surface-lighter/70 text-text-muted rounded-lg">
+                        <span key={f} className="text-[0.65rem] px-2 py-0.5 bg-surface-alt/70 text-text-muted rounded-lg">
                           {f}
                         </span>
                       ))}
@@ -67,7 +67,7 @@ export default function ServicesPage() {
                   <div className="sm:col-span-2 flex items-start">
                     <span className="inline-flex items-center gap-1.5 text-[0.6875rem] font-medium tracking-[0.06em] uppercase text-text-muted group-hover:text-accent transition-colors">
                       Ətraflı
-                      <svg viewBox="0 0 16 16" className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="1.5">
+                      <svg viewBox="0 0 16 16" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="1.5">
                         <path d="M3 8h10M10 4l3 4-3 4" />
                       </svg>
                     </span>

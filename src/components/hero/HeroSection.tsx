@@ -5,7 +5,7 @@ import { COMPANY } from "@/lib/data";
 
 export default function HeroSection() {
   return (
-    <section className="min-h-[100dvh] flex items-center pt-28 pb-10 lg:pt-24 lg:pb-0">
+    <section className="min-h-[100dvh] flex items-center pt-28 pb-10 lg:pt-24 lg:pb-0 bg-surface">
       <div className="max-w-[1200px] mx-auto w-full px-5 sm:px-8 lg:px-10">
         <div className="grid items-center gap-10 lg:gap-20 lg:grid-cols-12">
 
@@ -15,26 +15,26 @@ export default function HeroSection() {
               Arzularınızın<br />
               <span className="text-accent">memarıyıq</span>
             </h1>
-            <p className="text-[0.8125rem] text-text-secondary mt-4 max-w-[320px] leading-relaxed">
+            <p className="text-[0.875rem] sm:text-[0.8125rem] text-text-secondary mt-4 max-w-[340px] leading-relaxed">
               14 ildir Bakı və Abşeronda premium evlər tikirik. Hər layihə bizim imzamızdır.
             </p>
-            <div className="flex gap-2.5 mt-6">
+            <div className="flex flex-wrap gap-2.5 mt-6">
               <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-primary">Konsultasiya al</a>
               <Link href="/layiheler" className="btn-secondary">Layihələr</Link>
             </div>
 
             <div className="grid grid-cols-3 gap-5 mt-10 pt-8 border-t border-rule">
               <div>
-                <span className="font-heading text-lg text-accent">14+</span>
-                <span className="block text-[0.5625rem] text-text-muted mt-0.5">İl təcrübə</span>
+                <span className="font-heading text-xl sm:text-lg text-accent">14+</span>
+                <span className="block text-[0.625rem] sm:text-[0.5625rem] text-text-muted mt-0.5">İl təcrübə</span>
               </div>
               <div>
-                <span className="font-heading text-lg text-accent">127</span>
-                <span className="block text-[0.5625rem] text-text-muted mt-0.5">Tamamlanmış</span>
+                <span className="font-heading text-xl sm:text-lg text-accent">127</span>
+                <span className="block text-[0.625rem] sm:text-[0.5625rem] text-text-muted mt-0.5">Tamamlanmış</span>
               </div>
               <div>
-                <span className="font-heading text-lg text-accent">96%</span>
-                <span className="block text-[0.5625rem] text-text-muted mt-0.5">Məmnunluq</span>
+                <span className="font-heading text-xl sm:text-lg text-accent">96%</span>
+                <span className="block text-[0.625rem] sm:text-[0.5625rem] text-text-muted mt-0.5">Məmnunluq</span>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@ export default function HeroSection() {
             <img
               src="/image.png"
               alt="Şahinoğlu Construction"
-              className="w-full h-[260px] lg:h-[420px] object-cover rounded-lg shadow-lg"
+              className="w-full h-[280px] lg:h-[420px] object-cover rounded-xl card-shadow"
             />
           </div>
 

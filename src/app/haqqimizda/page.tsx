@@ -34,7 +34,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="lg:col-span-6">
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl">
+                <div className="aspect-[4/3] overflow-hidden rounded-xl">
                   <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80" alt="Tikinti prosesi" className="w-full h-full object-cover" />
                 </div>
               </div>
@@ -42,7 +42,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section ref={msRef} className="bg-surface-light py-14 lg:py-20">
+        <section ref={msRef} className="bg-surface-alt py-14 lg:py-20">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
             <h2 className="heading-xl text-text-primary mb-10 lg:mb-14">
               Yol<br /><span className="italic text-accent">xəritəmiz</span>
@@ -85,7 +85,7 @@ export default function AboutPage() {
               ].map((item, i) => (
                 <div
                   key={item.title}
-                  className={`rounded-2xl border border-rule bg-surface-lighter/50 p-6 lg:p-8 transition-all duration-700 ${
+                  className={`rounded-xl border border-rule bg-surface-alt/50 p-6 lg:p-8 transition-all duration-700 ${
                     certVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                   }`}
                   style={{ transitionDelay: `${i * 80}ms` }}

@@ -34,7 +34,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
       <main className="pt-16 lg:pt-20">
         <section className="relative h-[35vh] sm:h-[40vh] lg:h-[45vh] min-h-[240px]">
           <img src={project.heroImage} alt={project.title} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-surface-lighter via-surface-lighter/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-surface-alt via-surface-alt/50 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 lg:p-10 max-w-[1400px] mx-auto">
             <nav className="flex items-center gap-1.5 text-[0.6rem] text-text-muted mb-3">
               <Link href="/" className="hover:text-accent transition-colors">Ana Səhifə</Link>
@@ -44,7 +44,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
               <span className="text-text-secondary">{project.title}</span>
             </nav>
             <div className="flex items-center gap-1 text-text-muted text-[0.6rem] mb-1.5">
-              <MapPinIcon className="w-3 h-3" />
+              <MapPinIcon className="w-4 h-4" />
               {project.location}
             </div>
             <h1 className="heading-xl text-text-primary">{project.title}</h1>
@@ -61,7 +61,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                 <h3 className="heading-md text-text-primary mb-4">Qalereya</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
                   {project.gallery.map((img, i) => (
-                    <div key={i} className="aspect-[4/3] rounded-2xl overflow-hidden">
+                    <div key={i} className="aspect-[4/3] rounded-xl overflow-hidden">
                       <img src={img} alt={`${project.title} - ${i + 1}`} className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500" />
                     </div>
                   ))}
@@ -69,13 +69,13 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
 
                 <h3 className="heading-md text-text-primary mb-4">Əvvəl / Sonra</h3>
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="aspect-[4/3] rounded-2xl relative overflow-hidden">
+                  <div className="aspect-[4/3] rounded-xl relative overflow-hidden">
                     <img src={project.beforeImage} alt="Əvvəl" className="w-full h-full object-cover" />
-                    <span className="absolute top-3 left-3 px-2 py-0.5 bg-surface-lighter/80 text-[0.5rem] font-medium tracking-[0.08em] uppercase text-text-primary rounded-lg">Əvvəl</span>
+                    <span className="absolute top-3 left-3 px-2 py-0.5 bg-surface-alt/80 text-[0.5rem] font-medium tracking-[0.08em] uppercase text-text-primary rounded-lg">Əvvəl</span>
                   </div>
-                  <div className="aspect-[4/3] rounded-2xl relative overflow-hidden">
+                  <div className="aspect-[4/3] rounded-xl relative overflow-hidden">
                     <img src={project.afterImage} alt="Sonra" className="w-full h-full object-cover" />
-                    <span className="absolute top-3 left-3 px-2 py-0.5 bg-surface-lighter/80 text-[0.5rem] font-medium tracking-[0.08em] uppercase text-text-primary rounded-lg">Sonra</span>
+                    <span className="absolute top-3 left-3 px-2 py-0.5 bg-surface-alt/80 text-[0.5rem] font-medium tracking-[0.08em] uppercase text-text-primary rounded-lg">Sonra</span>
                   </div>
                 </div>
               </div>
@@ -114,13 +114,13 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                 <h3 className="heading-md text-text-primary mb-5">Oxşar layihələr</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {otherProjects.map((p) => (
-                    <Link key={p.id} href={`/layiheler/${p.id}`} className="group flex items-center gap-3 p-3 lg:p-4 rounded-2xl bg-surface-lighter/50 hover:bg-surface-lighter/70 transition-colors">
+                    <Link key={p.id} href={`/layiheler/${p.id}`} className="group flex items-center gap-3 p-3 lg:p-4 rounded-xl bg-surface-alt/50 hover:bg-surface-alt/70 transition-colors">
                       <img src={p.heroImage} alt={p.title} className="w-16 h-12 object-cover rounded-lg shrink-0" />
                       <div className="flex-1 min-w-0">
                         <div className="text-[0.8125rem] font-medium text-text-primary group-hover:text-accent transition-colors truncate">{p.title}</div>
                         <div className="text-[0.65rem] text-text-muted mt-0.5">{p.area} m² · {p.year}</div>
                       </div>
-                      <ArrowRight className="w-3.5 h-3.5 text-text-muted shrink-0" />
+                      <ArrowRight className="w-5 h-5 text-text-muted shrink-0" />
                     </Link>
                   ))}
                 </div>

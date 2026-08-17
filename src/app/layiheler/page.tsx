@@ -61,17 +61,17 @@ export default function ProjectsPage() {
                 <Link
                   key={project.id}
                   href={`/layiheler/${project.id}`}
-                  className={`group block rounded-2xl overflow-hidden transition-all duration-700 hover:-translate-y-1 ${
+                  className={`group block rounded-xl overflow-hidden transition-all duration-700 hover:-translate-y-1 ${
                     visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                   }`}
                   style={{ transitionDelay: `${i * 60}ms` }}
                 >
                   <div className="relative aspect-[4/5] overflow-hidden">
                     <img src={project.heroImage} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-surface-lighter/80 via-surface-lighter/50 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-surface-alt/80 via-surface-alt/50 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6">
                       <div className="flex items-center gap-1 text-text-secondary text-[0.6rem] mb-1.5">
-                        <MapPinIcon className="w-3 h-3" />
+                        <MapPinIcon className="w-4 h-4" />
                         {project.location}
                       </div>
                       <h2 className="heading-md text-text-primary mb-1">{project.title}</h2>

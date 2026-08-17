@@ -41,16 +41,16 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-[0.65rem] font-medium tracking-[0.06em] uppercase text-text-muted mb-1.5">Adınız</label>
-                        <input type="text" required className="w-full px-3 py-2.5 bg-surface-lighter/70 border border-rule text-text-primary text-[0.8125rem] rounded-xl focus:outline-none focus:border-accent transition-colors" placeholder="Adınız" />
+                        <input type="text" required className="w-full px-3 py-2.5 bg-surface-alt/70 border border-rule text-text-primary text-[0.8125rem] rounded-lg focus:outline-none focus:border-accent transition-colors" placeholder="Adınız" />
                       </div>
                       <div>
                         <label className="block text-[0.65rem] font-medium tracking-[0.06em] uppercase text-text-muted mb-1.5">Telefon</label>
-                        <input type="tel" required className="w-full px-3 py-2.5 bg-surface-lighter/70 border border-rule text-text-primary text-[0.8125rem] rounded-xl focus:outline-none focus:border-accent transition-colors" placeholder="+994" />
+                        <input type="tel" required className="w-full px-3 py-2.5 bg-surface-alt/70 border border-rule text-text-primary text-[0.8125rem] rounded-lg focus:outline-none focus:border-accent transition-colors" placeholder="+994" />
                       </div>
                     </div>
                     <div>
                       <label className="block text-[0.65rem] font-medium tracking-[0.06em] uppercase text-text-muted mb-1.5">Layihə növü</label>
-                      <select className="w-full px-3 py-2.5 bg-surface-lighter/70 border border-rule text-text-primary text-[0.8125rem] rounded-xl focus:outline-none focus:border-accent appearance-none">
+                      <select className="w-full px-3 py-2.5 bg-surface-alt/70 border border-rule text-text-primary text-[0.8125rem] rounded-lg focus:outline-none focus:border-accent appearance-none">
                         <option value="">Seçin</option>
                         <option value="ferdi-ev">Fərdi Ev</option>
                         <option value="villa">Villa</option>
@@ -59,7 +59,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <label className="block text-[0.65rem] font-medium tracking-[0.06em] uppercase text-text-muted mb-1.5">Mesaj</label>
-                      <textarea rows={4} className="w-full px-3 py-2.5 bg-surface-lighter/70 border border-rule text-text-primary text-[0.8125rem] rounded-xl focus:outline-none focus:border-accent resize-none" placeholder="Qısa məlumat..." />
+                      <textarea rows={4} className="w-full px-3 py-2.5 bg-surface-alt/70 border border-rule text-text-primary text-[0.8125rem] rounded-lg focus:outline-none focus:border-accent resize-none" placeholder="Qısa məlumat..." />
                     </div>
                     <button type="submit" className="btn-fill">Göndər</button>
                   </form>
@@ -94,7 +94,7 @@ export default function ContactPage() {
 
                 <div className="py-6 border-t border-rule">
                   <div className="label mb-3">Xəritə</div>
-                  <div className="aspect-[4/3] bg-surface-lighter/50 border border-rule rounded-2xl flex items-center justify-center text-text-muted text-[0.75rem]">
+                  <div className="aspect-[4/3] bg-surface-alt/50 border border-rule rounded-xl flex items-center justify-center text-text-muted text-[0.75rem]">
                     Xəritə yüklənir...
                   </div>
                 </div>

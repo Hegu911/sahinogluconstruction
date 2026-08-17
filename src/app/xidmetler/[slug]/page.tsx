@@ -98,7 +98,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                             <div>
                               <div className="text-[0.8125rem] font-medium text-text-primary group-hover:text-accent transition-colors">{p.title}</div>
                               <div className="flex items-center gap-1 text-[0.65rem] text-text-muted mt-0.5">
-                                <MapPinIcon className="w-2.5 h-2.5" />{p.location}
+                                <MapPinIcon className="w-4 h-4" />{p.location}
                               </div>
                             </div>
                           </Link>

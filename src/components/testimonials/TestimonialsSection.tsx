@@ -12,21 +12,21 @@ export default function TestimonialsSection() {
   const { ref, visible } = useScrollReveal(0.1);
 
   return (
-    <section ref={ref} className="py-12 lg:py-20 border-y border-rule bg-surface">
+    <section ref={ref} className="py-14 lg:py-20 bg-surface-alt">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-10">
         <div className="mb-8">
           <div className="label mb-2">Rəylər</div>
           <h2 className="heading-xl text-text-primary">Müştərilərimiz <span className="text-accent">deyir</span></h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-rule">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-px lg:bg-rule">
           {testimonials.map((t, i) => (
-            <div key={t.name} className={`bg-surface p-5 transition-all duration-300 hover:shadow-sm ${visible ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: `${i * 80}ms` }}>
-              <p className="text-[0.8125rem] text-text-secondary leading-relaxed mb-4">&ldquo;{t.text}&rdquo;</p>
+            <div key={t.name} className={`bg-surface p-5 sm:p-6 card-shadow rounded-xl transition-all duration-300 lg:rounded-none lg:card-shadow-none lg:bg-surface ${visible ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: `${i * 80}ms` }}>
+              <p className="text-[0.875rem] sm:text-[0.8125rem] text-text-secondary leading-relaxed mb-4">&ldquo;{t.text}&rdquo;</p>
               <div className="flex items-center gap-3">
-                <div className="w-7 h-7 bg-surface-light border border-rule rounded flex items-center justify-center text-[0.5625rem] font-medium text-accent">{t.avatar}</div>
+                <div className="w-8 h-8 bg-accent/10 flex items-center justify-center text-[0.625rem] font-semibold text-accent rounded-full">{t.avatar}</div>
                 <div>
-                  <div className="text-[0.75rem] font-medium text-text-primary">{t.name}</div>
-                  <div className="text-[0.625rem] text-text-muted">{t.role}</div>
+                  <div className="text-[0.8125rem] font-medium text-text-primary">{t.name}</div>
+                  <div className="text-[0.6875rem] text-text-muted">{t.role}</div>
                 </div>
               </div>
             </div>

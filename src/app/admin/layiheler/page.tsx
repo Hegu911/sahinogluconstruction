@@ -26,7 +26,7 @@ export default function AdminProjectsPage() {
     resetForm();
   };
 
-  const ic = "w-full px-2.5 py-2 bg-surface-light border border-border text-text-primary text-[0.8125rem] rounded-[1px] focus:outline-none focus:border-accent";
+  const ic = "w-full px-2.5 py-2 bg-surface-alt border border-border text-text-primary text-[0.8125rem] rounded-[1px] focus:outline-none focus:border-accent";
 
   return (
     <div>
@@ -36,7 +36,7 @@ export default function AdminProjectsPage() {
       </div>
 
       {showForm && (
-        <form onSubmit={handleSubmit} className="p-4 bg-surface-light border border-border rounded-[1px] mb-6 space-y-3">
+        <form onSubmit={handleSubmit} className="p-4 bg-surface-alt border border-border rounded-[1px] mb-6 space-y-3">
           <div className="label mb-1">{editing ? "Redaktə" : "Yeni"}</div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             <div><label className="block text-[0.6rem] text-text-muted mb-0.5">Başlıq</label><input type="text" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} className={ic} required /></div>
@@ -55,7 +55,7 @@ export default function AdminProjectsPage() {
 
       <div className="space-y-0">
         {projects.map((p) => (
-          <div key={p.id} className="flex items-center gap-3 p-3 bg-surface-light border-b border-border">
+          <div key={p.id} className="flex items-center gap-3 p-3 bg-surface-alt border-b border-border">
             <img src={p.heroImage} alt={p.title} className="w-14 h-10 object-cover rounded-[1px] shrink-0" />
             <div className="flex-1 min-w-0"><div className="text-[0.8125rem] font-medium text-text-primary truncate">{p.title}</div><div className="text-[0.6rem] text-text-muted">{p.location} · {p.area} m² · {p.year}</div></div>
             <div className="flex gap-1.5 shrink-0">
