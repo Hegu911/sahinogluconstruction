@@ -8,37 +8,16 @@ export default function CtaSection() {
   const { ref, visible } = useScrollReveal(0.15);
 
   return (
-    <section ref={ref} className="py-14 lg:py-24 bg-paper">
-      <div
-        className={`max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 transition-all duration-700 ${
-          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-        }`}
-      >
-        <div className="relative overflow-hidden rounded-[2rem] bg-ink px-8 py-14 lg:px-16 lg:py-20">
-          <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-bronze/5 blur-[120px]" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-bronze/8 blur-[100px]" />
-
-          <div className="relative z-10 max-w-[560px]">
-            <div className="label !text-bronze mb-4">Başlayın</div>
-            <h2 className="heading-xl text-paper mb-4">
-              Evinizi bizimlə
-              <br />
-              <span className="italic text-bronze">tikin</span>
-            </h2>
-            <p className="text-[0.9375rem] text-paper/40 mb-8 max-w-[400px] leading-relaxed">
-              Pulsuz konsultasiya və smeta üçün bizimlə əlaqə saxlayın. 14 illik
-              təcrübə, 127+ tamamlanmış obyekt.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-fill">
-                Əlaqə saxla
-                <svg viewBox="0 0 16 16" className="w-4 h-4" fill="currentColor">
-                  <path d="M13.6 2.3A7.8 7.8 0 001.4 14.5L0 16l1.6-.4A7.8 7.8 0 0013.6 2.3zm-1.2 1.1A6.4 6.4 0 012.5 12.8l-.7.2.3-.8a6.4 6.4 0 019.9-7.6l.2.4-.8.3zM5.7 4.7c.1 0 .3 0 .5.1.2 0 .4.1.5.3l.5.9c0 .1 0 .2-.1.4l-.4.4c.2.4.5.8.8 1.1l.4-.4c.2-.1.3-.1.4 0l.9.5c.2.1.3.3.3.5 0 .2.1.5.1.7A5.3 5.3 0 014 10.2c.2-1.6.9-3 1.8-4.1.1-.2.2-.4.3-.5.1-.1.2-.2.2-.3 0-.1.1-.3.1-.3z"/>
-                </svg>
-              </a>
-              <Link href="/elaqe" className="btn-ghost !border-paper/10 !text-paper/50 hover:!bg-paper/5">
-                Form Göndər
-              </Link>
+    <section ref={ref} className="py-12 lg:py-20">
+      <div className={`max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`}>
+        <div className="rounded-2xl bg-ink-light border border-white/5 p-8 lg:p-12">
+          <div className="max-w-[480px]">
+            <div className="label mb-3">Başlayın</div>
+            <h2 className="heading-xl text-paper mb-3">Evinizi bizimlə <span className="italic text-bronze">tikin</span></h2>
+            <p className="text-[0.8125rem] text-white/35 mb-6">Pulsuz konsultasiya və smeta üçün bizimlə əlaqə saxlayın.</p>
+            <div className="flex flex-wrap gap-2.5">
+              <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-fill">Əlaqə saxla</a>
+              <Link href="/elaqe" className="btn-ghost !border-white/10 !text-white/40 hover:!bg-white/5">Form Göndər</Link>
             </div>
           </div>
         </div>

@@ -14,87 +14,47 @@ const BOTTOM_NAV = [
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
-
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-ink/90 backdrop-blur-xl border-b border-paper/5" : "bg-transparent"
-        }`}
-      >
-        <div className="max-w-[1400px] mx-auto flex items-center justify-between px-5 sm:px-8 lg:px-10 h-16 lg:h-20">
-          <Link href="/" className="font-heading text-base lg:text-lg tracking-tight text-paper font-normal uppercase">
-            Şahinoğlu
-          </Link>
-
-          <a
-            href={`tel:${COMPANY.phoneRaw}`}
-            className="lg:hidden flex items-center gap-1.5 text-paper/70"
-          >
-            <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-            </svg>
-            <span className="text-[0.6875rem] font-medium tracking-wide">{COMPANY.phone}</span>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-ink/90 backdrop-blur-xl border-b border-white/5" : "bg-transparent"}`}>
+        <div className="max-w-[1400px] mx-auto flex items-center justify-between px-5 sm:px-8 lg:px-10 h-14 lg:h-16">
+          <Link href="/" className="font-heading text-sm lg:text-base tracking-tight text-paper font-normal uppercase">Şahinoğlu</Link>
+          <a href={`tel:${COMPANY.phoneRaw}`} className="lg:hidden flex items-center gap-1.5 text-paper/60">
+            <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span className="text-[0.625rem] font-medium">{COMPANY.phone}</span>
           </a>
-
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-[0.75rem] font-medium transition-colors duration-200 relative after:content-[''] after:absolute after:bottom-[-3px] after:left-0 after:w-0 after:h-[1px] after:bg-bronze after:transition-all after:duration-300 hover:after:w-full ${
-                  pathname === link.href ? "text-paper after:w-full" : "text-paper/40 hover:text-paper"
-                }`}
-              >
-                {link.label}
-              </Link>
+              <Link key={link.href} href={link.href} className={`text-[0.6875rem] font-medium transition-colors relative after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[1px] after:bg-bronze after:transition-all hover:after:w-full ${pathname === link.href ? "text-paper after:w-full" : "text-white/35 hover:text-paper"}`}>{link.label}</Link>
             ))}
           </nav>
-
-          <div className="hidden lg:flex items-center gap-5">
-            <a
-              href={`tel:${COMPANY.phoneRaw}`}
-              className="text-[0.75rem] font-medium text-paper/50 tracking-wide hover:text-bronze transition-colors"
-            >
-              {COMPANY.phone}
-            </a>
-            <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-fill !py-2.5 !px-5 !text-[0.6875rem]">
-              Əlaqə saxla
-            </a>
+          <div className="hidden lg:flex items-center gap-4">
+            <a href={`tel:${COMPANY.phoneRaw}`} className="text-[0.6875rem] font-medium text-white/40 hover:text-bronze transition-colors">{COMPANY.phone}</a>
+            <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-fill !py-2 !px-4 !text-[0.625rem]">Əlaqə</a>
           </div>
         </div>
       </header>
 
-      <nav className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-ink/90 backdrop-blur-xl border-t border-paper/5 safe-area-pb">
-        <div className="flex items-center justify-around h-[3.25rem]">
+      <nav className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-ink/90 backdrop-blur-xl border-t border-white/5 safe-area-pb">
+        <div className="flex items-center justify-around h-[3rem]">
           {BOTTOM_NAV.map((item) => {
             const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
-            const color = isActive ? "var(--color-bronze)" : "rgba(250,250,247,0.3)";
-            const content = (
-              <div className={`flex flex-col items-center gap-[2px] transition-colors ${isActive ? "text-bronze" : "text-paper/30"}`}>
-                {item.icon(color)}
-                <span className="text-[0.5625rem] font-medium tracking-wide">{item.label}</span>
-              </div>
-            );
+            const color = isActive ? "var(--color-bronze)" : "rgba(255,255,255,0.25)";
             return item.external ? (
               <a key={item.href} href={item.href} target="_blank" rel="noopener noreferrer">
-                {content}
+                <div className={`flex flex-col items-center gap-[2px] ${isActive ? "text-bronze" : "text-white/25"}`}>{item.icon(color)}<span className="text-[0.5rem] font-medium">{item.label}</span></div>
               </a>
             ) : (
               <Link key={item.href} href={item.href}>
-                {content}
+                <div className={`flex flex-col items-center gap-[2px] ${isActive ? "text-bronze" : "text-white/25"}`}>{item.icon(color)}<span className="text-[0.5rem] font-medium">{item.label}</span></div>
               </Link>
             );
           })}
