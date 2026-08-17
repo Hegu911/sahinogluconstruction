@@ -26,17 +26,17 @@ export default function AdminProjectsPage() {
     resetForm();
   };
 
-  const ic = "w-full px-2.5 py-2 bg-paper border border-border text-ink text-[0.8125rem] rounded-[1px] focus:outline-none focus:border-accent";
+  const ic = "w-full px-2.5 py-2 bg-surface-light border border-border text-text-primary text-[0.8125rem] rounded-[1px] focus:outline-none focus:border-accent";
 
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <div><h1 className="heading-lg text-ink">Layihələr</h1><p className="body-sm mt-0.5">{projects.length} layihə</p></div>
+        <div><h1 className="heading-lg text-text-primary">Layihələr</h1><p className="body-sm mt-0.5">{projects.length} layihə</p></div>
         <button onClick={() => { resetForm(); setShowForm(true); }} className="btn-fill !text-[0.6875rem]">+ Yeni</button>
       </div>
 
       {showForm && (
-        <form onSubmit={handleSubmit} className="p-4 bg-paper border border-border rounded-[1px] mb-6 space-y-3">
+        <form onSubmit={handleSubmit} className="p-4 bg-surface-light border border-border rounded-[1px] mb-6 space-y-3">
           <div className="label mb-1">{editing ? "Redaktə" : "Yeni"}</div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             <div><label className="block text-[0.6rem] text-text-muted mb-0.5">Başlıq</label><input type="text" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} className={ic} required /></div>
@@ -55,9 +55,9 @@ export default function AdminProjectsPage() {
 
       <div className="space-y-0">
         {projects.map((p) => (
-          <div key={p.id} className="flex items-center gap-3 p-3 bg-paper border-b border-border">
+          <div key={p.id} className="flex items-center gap-3 p-3 bg-surface-light border-b border-border">
             <img src={p.heroImage} alt={p.title} className="w-14 h-10 object-cover rounded-[1px] shrink-0" />
-            <div className="flex-1 min-w-0"><div className="text-[0.8125rem] font-medium text-ink truncate">{p.title}</div><div className="text-[0.6rem] text-text-muted">{p.location} · {p.area} m² · {p.year}</div></div>
+            <div className="flex-1 min-w-0"><div className="text-[0.8125rem] font-medium text-text-primary truncate">{p.title}</div><div className="text-[0.6rem] text-text-muted">{p.location} · {p.area} m² · {p.year}</div></div>
             <div className="flex gap-1.5 shrink-0">
               <button onClick={() => handleEdit(p)} className="px-2 py-1 text-[0.65rem] font-medium text-text-secondary border border-border rounded-[1px] hover:border-accent hover:text-accent transition-colors">Red.</button>
               <button onClick={() => handleDelete(p.id)} className="px-2 py-1 text-[0.65rem] font-medium text-red-400 border border-border rounded-[1px] hover:border-red-400 transition-colors">Sil</button>

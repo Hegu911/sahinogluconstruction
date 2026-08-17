@@ -17,7 +17,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
         <Header />
         <main className="pt-16 lg:pt-20 flex items-center justify-center min-h-screen">
           <div className="text-center px-5">
-            <h1 className="heading-lg text-paper mb-4">Xidmət tapılmadı</h1>
+            <h1 className="heading-lg text-text-primary mb-4">Xidmət tapılmadı</h1>
             <Link href="/xidmetler" className="btn-ghost">Qayıt</Link>
           </div>
         </main>
@@ -34,28 +34,28 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
       <main className="pt-16 lg:pt-20">
         <section className="py-10 lg:py-20">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
-            <nav className="flex items-center gap-1.5 text-[0.65rem] text-paper/25 mb-8 lg:mb-12">
+            <nav className="flex items-center gap-1.5 text-[0.65rem] text-text-muted mb-8 lg:mb-12">
               <Link href="/" className="hover:text-accent transition-colors">Ana Səhifə</Link>
               <span>/</span>
               <Link href="/xidmetler" className="hover:text-accent transition-colors">Xidmətlər</Link>
               <span>/</span>
-              <span className="text-paper/50">{service.title}</span>
+              <span className="text-text-secondary">{service.title}</span>
             </nav>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14">
               <div className="lg:col-span-7">
                 <div className="label mb-3">{service.title}</div>
-                <h1 className="heading-xl text-paper mb-6">{service.title}</h1>
-                <p className="body-sm text-paper/40 mb-8 max-w-[520px]">{service.fullDescription}</p>
+                <h1 className="heading-xl text-text-primary mb-6">{service.title}</h1>
+                <p className="body-sm text-text-secondary mb-8 max-w-[520px]">{service.fullDescription}</p>
 
-                <div className="w-full h-px bg-paper/5 mb-8" />
+                <div className="w-full h-px bg-rule mb-8" />
 
-                <h3 className="heading-md text-paper mb-4">Xidmətə daxildir</h3>
+                <h3 className="heading-md text-text-primary mb-4">Xidmətə daxildir</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
                   {service.features.map((f) => (
-                    <div key={f} className="flex items-center gap-2 py-2.5 border-b border-paper/5">
+                    <div key={f} className="flex items-center gap-2 py-2.5 border-b border-rule">
                       <span className="w-1 h-1 bg-accent rounded-full shrink-0" />
-                      <span className="text-[0.8125rem] text-paper/40">{f}</span>
+                      <span className="text-[0.8125rem] text-text-secondary">{f}</span>
                     </div>
                   ))}
                 </div>
@@ -68,36 +68,36 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
 
               <div className="lg:col-span-4 lg:col-start-9">
                 <div className="sticky top-20 space-y-6">
-                  <div className="py-6 border-t border-paper/5">
+                  <div className="py-6 border-t border-rule">
                     <div className="label mb-4">Zəmanət</div>
                     <div className="space-y-3">
                       <div className="flex items-start gap-2.5">
                         <ShieldIcon className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                         <div>
-                          <div className="text-[0.8125rem] font-medium text-paper/70">10 il struktur zəmanəti</div>
-                          <div className="text-[0.6875rem] text-paper/25 mt-0.5">Bünövrə və konstruksiya</div>
+                          <div className="text-[0.8125rem] font-medium text-text-primary">10 il struktur zəmanəti</div>
+                          <div className="text-[0.6875rem] text-text-muted mt-0.5">Bünövrə və konstruksiya</div>
                         </div>
                       </div>
                       <div className="flex items-start gap-2.5">
                         <CalendarIcon className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                         <div>
-                          <div className="text-[0.8125rem] font-medium text-paper/70">3 il tam təmir zəmanəti</div>
-                          <div className="text-[0.6875rem] text-paper/25 mt-0.5">Daxili bitirmə işləri</div>
+                          <div className="text-[0.8125rem] font-medium text-text-primary">3 il tam təmir zəmanəti</div>
+                          <div className="text-[0.6875rem] text-text-muted mt-0.5">Daxili bitirmə işləri</div>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   {relatedProjects.length > 0 && (
-                    <div className="py-6 border-t border-paper/5">
+                    <div className="py-6 border-t border-rule">
                       <div className="label mb-4">Əlaqəli Layihələr</div>
                       <div className="space-y-3">
                         {relatedProjects.map((p) => (
                           <Link key={p.id} href={`/layiheler/${p.id}`} className="flex items-center gap-3 group">
                             <img src={p.heroImage} alt={p.title} className="w-14 h-10 object-cover rounded-lg shrink-0" />
                             <div>
-                              <div className="text-[0.8125rem] font-medium text-paper/70 group-hover:text-accent transition-colors">{p.title}</div>
-                              <div className="flex items-center gap-1 text-[0.65rem] text-paper/25 mt-0.5">
+                              <div className="text-[0.8125rem] font-medium text-text-primary group-hover:text-accent transition-colors">{p.title}</div>
+                              <div className="flex items-center gap-1 text-[0.65rem] text-text-muted mt-0.5">
                                 <MapPinIcon className="w-2.5 h-2.5" />{p.location}
                               </div>
                             </div>

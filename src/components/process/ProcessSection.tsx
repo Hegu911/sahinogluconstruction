@@ -13,7 +13,7 @@ export default function ProcessSection() {
   const { ref, visible } = useScrollReveal(0.05);
 
   return (
-    <section ref={ref} className="py-12 lg:py-20 border-y border-rule">
+    <section ref={ref} className="py-12 lg:py-20 border-y border-rule bg-surface-light">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-10">
         <div className="mb-8">
           <div className="label mb-2">Proses</div>

@@ -29,14 +29,14 @@ export default function ProjectsPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 mb-8 lg:mb-12">
               <div className="lg:col-span-8">
                 <div className="label mb-3">Layihələr</div>
-                <h1 className="heading-xl text-paper">
+                <h1 className="heading-xl text-text-primary">
                   Tamamlanmış
                   <br />
                   <span className="italic text-accent">obyektlər</span>
                 </h1>
               </div>
               <div className="lg:col-span-4 flex items-end">
-                <p className="body-sm text-paper/40">Hər layihənin öz hekayəsi var.</p>
+                <p className="body-sm text-text-secondary">Hər layihənin öz hekayəsi var.</p>
               </div>
             </div>
 
@@ -47,8 +47,8 @@ export default function ProjectsPage() {
                   onClick={() => setActive(cat.slug)}
                   className={`px-4 py-2 text-[0.6875rem] font-medium tracking-[0.06em] uppercase border rounded-full transition-all shrink-0 ${
                     active === cat.slug
-                      ? "bg-accent text-ink border-accent"
-                      : "bg-transparent text-paper/30 border-paper/10 hover:border-paper/30"
+                      ? "bg-accent text-text-primary border-accent"
+                      : "bg-transparent text-text-muted border-rule hover:border-text-muted"
                   }`}
                 >
                   {cat.label}
@@ -68,18 +68,18 @@ export default function ProjectsPage() {
                 >
                   <div className="relative aspect-[4/5] overflow-hidden">
                     <img src={project.heroImage} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-surface-lighter/80 via-surface-lighter/50 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6">
-                      <div className="flex items-center gap-1 text-paper/40 text-[0.6rem] mb-1.5">
+                      <div className="flex items-center gap-1 text-text-secondary text-[0.6rem] mb-1.5">
                         <MapPinIcon className="w-3 h-3" />
                         {project.location}
                       </div>
-                      <h2 className="heading-md text-paper mb-1">{project.title}</h2>
-                      <div className="flex items-center gap-2 text-[0.65rem] text-paper/30">
+                      <h2 className="heading-md text-text-primary mb-1">{project.title}</h2>
+                      <div className="flex items-center gap-2 text-[0.65rem] text-text-muted">
                         <span>{project.area} m²</span>
-                        <span className="w-[1px] h-2.5 bg-paper/15" />
+                        <span className="w-[1px] h-2.5 bg-rule" />
                         <span>{project.rooms} otaq</span>
-                        <span className="w-[1px] h-2.5 bg-paper/15" />
+                        <span className="w-[1px] h-2.5 bg-rule" />
                         <span>{project.year}</span>
                       </div>
                     </div>

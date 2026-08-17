@@ -11,7 +11,7 @@ export default function ServicesSection() {
   const { ref, visible } = useScrollReveal(0.05);
 
   return (
-    <section ref={ref} className="py-12 lg:py-20">
+    <section ref={ref} className="py-12 lg:py-20 bg-surface">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-10">
         <div className="flex items-end justify-between mb-8">
           <div>

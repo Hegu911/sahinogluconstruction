@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { COMPANY, NAV_LINKS } from "@/lib/data";
-import Image from "next/image";
 
 const BOTTOM_NAV = [
   { href: "/", label: "Əsas", icon: (c: string) => <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke={c} strokeWidth="1.5"><path d="M3 9.5L12 3l9 6.5V20a1.5 1.5 0 01-1.5 1.5h-4V15h-3v6.5H9V15h-3v6.5H4.5A1.5 1.5 0 013 20V9.5z"/></svg> },
@@ -25,7 +24,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? "bg-surface/95 backdrop-blur-md" : "bg-transparent"}`}>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? "bg-surface/95 backdrop-blur-md shadow-sm" : "bg-transparent"}`}>
         <div className="max-w-[1200px] mx-auto flex items-center justify-between px-5 sm:px-8 lg:px-10 h-16 lg:h-20">
           <Link href="/" className="flex items-center gap-2.5">
             <img src="/image.png" alt="Şahinoğlu" className="w-8 h-8 lg:w-10 lg:h-10 rounded object-cover" />
@@ -51,7 +50,7 @@ export default function Header() {
         <div className="h-px bg-rule" />
       </header>
 
-      <nav className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-surface border-t border-rule safe-area-pb">
+      <nav className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-surface/95 backdrop-blur-md border-t border-rule safe-area-pb">
         <div className="flex items-center justify-around h-[3rem]">
           {BOTTOM_NAV.map((item) => {
             const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);

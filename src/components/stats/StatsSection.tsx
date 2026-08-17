@@ -13,7 +13,7 @@ export default function StatsSection() {
   const { ref, visible } = useScrollReveal(0.15);
 
   return (
-    <section ref={ref} className="border-y border-rule">
+    <section ref={ref} className="border-y border-rule bg-surface">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-rule">
           {stats.map((item, i) => (
