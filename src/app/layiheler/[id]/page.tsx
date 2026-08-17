@@ -15,10 +15,10 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
     return (
       <>
         <Header />
-        <main className="pt-16 lg:pt-20 flex items-center justify-center min-h-screen">
+        <main className="pt-16 lg:pt-20 flex items-center justify-center min-h-screen bg-surface">
           <div className="text-center px-5">
             <h1 className="heading-lg text-text-primary mb-4">Layihə tapılmadı</h1>
-            <Link href="/layiheler" className="btn-ghost">Qayıt</Link>
+            <Link href="/layiheler" className="btn-secondary">Qayıt</Link>
           </div>
         </main>
         <Footer />
@@ -34,93 +34,75 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
       <main className="pt-16 lg:pt-20">
         <section className="relative h-[35vh] sm:h-[40vh] lg:h-[45vh] min-h-[240px]">
           <img src={project.heroImage} alt={project.title} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-surface-alt via-surface-alt/50 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 lg:p-10 max-w-[1400px] mx-auto">
-            <nav className="flex items-center gap-1.5 text-[0.6rem] text-text-muted mb-3">
-              <Link href="/" className="hover:text-accent transition-colors">Ana Səhifə</Link>
-              <span>/</span>
-              <Link href="/layiheler" className="hover:text-accent transition-colors">Layihələr</Link>
-              <span>/</span>
+          <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/50 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 lg:p-10 max-w-[1200px] mx-auto">
+            <nav className="flex items-center gap-1.5 text-[0.625rem] text-text-muted mb-3">
+              <Link href="/" className="hover:text-accent transition-colors">Ana Səhifə</Link><span>/</span>
+              <Link href="/layiheler" className="hover:text-accent transition-colors">Layihələr</Link><span>/</span>
               <span className="text-text-secondary">{project.title}</span>
             </nav>
-            <div className="flex items-center gap-1 text-text-muted text-[0.6rem] mb-1.5">
-              <MapPinIcon className="w-4 h-4" />
-              {project.location}
-            </div>
+            <div className="flex items-center gap-1 text-text-muted text-[0.625rem] mb-1.5"><MapPinIcon className="w-3.5 h-3.5" />{project.location}</div>
             <h1 className="heading-xl text-text-primary">{project.title}</h1>
           </div>
         </section>
 
-        <section className="py-10 lg:py-20">
-          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
+        <section className="py-10 lg:py-20 bg-surface">
+          <div className="max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14">
               <div className="lg:col-span-8">
-                <p className="body-sm text-text-secondary mb-8 max-w-[520px]">{project.description}</p>
+                <p className="text-[0.9375rem] text-text-secondary mb-8 max-w-[520px] leading-relaxed">{project.description}</p>
                 <div className="w-full h-px bg-rule mb-8" />
-
-                <h3 className="heading-md text-text-primary mb-4">Qalereya</h3>
+                <h3 className="heading-lg text-text-primary mb-4">Qalereya</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
                   {project.gallery.map((img, i) => (
-                    <div key={i} className="aspect-[4/3] rounded-xl overflow-hidden">
+                    <div key={i} className="aspect-[4/3] rounded-xl overflow-hidden card-shadow">
                       <img src={img} alt={`${project.title} - ${i + 1}`} className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500" />
                     </div>
                   ))}
                 </div>
-
-                <h3 className="heading-md text-text-primary mb-4">Əvvəl / Sonra</h3>
+                <h3 className="heading-lg text-text-primary mb-4">Əvvəl / Sonra</h3>
                 <div className="grid grid-cols-2 gap-3">
-                  <div className="aspect-[4/3] rounded-xl relative overflow-hidden">
+                  <div className="aspect-[4/3] rounded-xl relative overflow-hidden card-shadow">
                     <img src={project.beforeImage} alt="Əvvəl" className="w-full h-full object-cover" />
-                    <span className="absolute top-3 left-3 px-2 py-0.5 bg-surface-alt/80 text-[0.5rem] font-medium tracking-[0.08em] uppercase text-text-primary rounded-lg">Əvvəl</span>
+                    <span className="absolute top-3 left-3 px-2 py-0.5 bg-surface/80 text-[0.5625rem] font-medium tracking-[0.08em] uppercase text-text-primary rounded-lg">Əvvəl</span>
                   </div>
-                  <div className="aspect-[4/3] rounded-xl relative overflow-hidden">
+                  <div className="aspect-[4/3] rounded-xl relative overflow-hidden card-shadow">
                     <img src={project.afterImage} alt="Sonra" className="w-full h-full object-cover" />
-                    <span className="absolute top-3 left-3 px-2 py-0.5 bg-surface-alt/80 text-[0.5rem] font-medium tracking-[0.08em] uppercase text-text-primary rounded-lg">Sonra</span>
+                    <span className="absolute top-3 left-3 px-2 py-0.5 bg-surface/80 text-[0.5625rem] font-medium tracking-[0.08em] uppercase text-text-primary rounded-lg">Sonra</span>
                   </div>
                 </div>
               </div>
 
               <div className="lg:col-span-4">
-                <div className="sticky top-20">
-                  <div className="py-6 border-t border-rule">
+                <div className="sticky top-24">
+                  <div className="bg-surface-alt p-6 rounded-xl card-shadow">
                     <div className="label mb-4">Layihə Məlumatları</div>
                     <div className="space-y-0">
-                      {[
-                        { label: "Sahə", value: `${project.area} m²` },
-                        { label: "Otaq", value: `${project.rooms} otaq` },
-                        { label: "İl", value: `${project.year}` },
-                        { label: "Müddət", value: project.duration },
-                        { label: "Yer", value: project.location },
-                        { label: "Növ", value: project.category === "ferdi-ev" ? "Fərdi Ev" : project.category === "villa" ? "Villa" : "Renovasiya" },
-                      ].map((item) => (
+                      {[{ label: "Sahə", value: `${project.area} m²` }, { label: "Otaq", value: `${project.rooms} otaq` }, { label: "İl", value: `${project.year}` }, { label: "Müddət", value: project.duration }, { label: "Yer", value: project.location }, { label: "Növ", value: project.category === "ferdi-ev" ? "Fərdi Ev" : project.category === "villa" ? "Villa" : "Renovasiya" }].map((item) => (
                         <div key={item.label} className="flex items-center justify-between py-2.5 border-b border-rule">
-                          <span className="text-[0.65rem] font-medium text-text-muted uppercase tracking-wide">{item.label}</span>
-                          <span className="text-[0.8125rem] font-medium text-text-primary">{item.value}</span>
+                          <span className="text-[0.6875rem] font-medium text-text-muted uppercase tracking-wide">{item.label}</span>
+                          <span className="text-[0.875rem] font-medium text-text-primary">{item.value}</span>
                         </div>
                       ))}
                     </div>
                   </div>
-
-                  <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-fill w-full justify-center mt-6">
-                    Sifariş Et
-                    <ArrowRight />
-                  </a>
+                  <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center mt-6">Sifariş Et <ArrowRight className="w-4 h-4" /></a>
                 </div>
               </div>
             </div>
 
             {otherProjects.length > 0 && (
               <div className="mt-14 lg:mt-20 pt-8 lg:pt-10 border-t border-rule">
-                <h3 className="heading-md text-text-primary mb-5">Oxşar layihələr</h3>
+                <h3 className="heading-lg text-text-primary mb-5">Oxşar layihələr</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {otherProjects.map((p) => (
-                    <Link key={p.id} href={`/layiheler/${p.id}`} className="group flex items-center gap-3 p-3 lg:p-4 rounded-xl bg-surface-alt/50 hover:bg-surface-alt/70 transition-colors">
+                    <Link key={p.id} href={`/layiheler/${p.id}`} className="group flex items-center gap-3 p-3 lg:p-4 rounded-xl bg-surface-alt hover:bg-surface hover:card-shadow transition-all">
                       <img src={p.heroImage} alt={p.title} className="w-16 h-12 object-cover rounded-lg shrink-0" />
                       <div className="flex-1 min-w-0">
-                        <div className="text-[0.8125rem] font-medium text-text-primary group-hover:text-accent transition-colors truncate">{p.title}</div>
-                        <div className="text-[0.65rem] text-text-muted mt-0.5">{p.area} m² · {p.year}</div>
+                        <div className="text-[0.875rem] font-medium text-text-primary group-hover:text-accent transition-colors truncate">{p.title}</div>
+                        <div className="text-[0.6875rem] text-text-muted mt-0.5">{p.area} m² · {p.year}</div>
                       </div>
-                      <ArrowRight className="w-5 h-5 text-text-muted shrink-0" />
+                      <ArrowRight className="w-4 h-4 text-text-muted shrink-0" />
                     </Link>
                   ))}
                 </div>
