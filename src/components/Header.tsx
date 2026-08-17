@@ -35,12 +35,8 @@ export default function Header() {
         }`}
       >
         <div className="max-w-[1400px] mx-auto flex items-center justify-between px-5 sm:px-8 lg:px-10 h-16 lg:h-20">
-          <Link href="/" className="flex items-center gap-3">
-            <img src="/image.png" alt="Şahinoğlu" className="h-14 lg:h-16 w-auto" />
-            <span className="inline-flex flex-col leading-none font-heading tracking-tight font-normal uppercase">
-              <span className="text-bronze text-base lg:text-lg">Şahinoğlu</span>
-              <span className="text-ink text-[0.65rem] lg:text-[0.75rem] tracking-[0.15em]">Construction</span>
-            </span>
+          <Link href="/" className="font-heading text-base lg:text-lg tracking-tight text-ink font-normal uppercase">
+            Şahinoğlu
           </Link>
 
           <a

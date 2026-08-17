@@ -171,11 +171,11 @@ export default function RootLayout({
         />
       </head>
       <body className="pb-14 lg:pb-0">
-        <div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none">
+        <div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
           <img
             src="/image.png"
             alt=""
-            className="w-[80vw] max-w-[700px] h-auto opacity-[0.06]"
+            className="w-full h-full object-contain opacity-[0.06] p-8"
           />
         </div>
         <div className="relative z-10">{children}</div>
