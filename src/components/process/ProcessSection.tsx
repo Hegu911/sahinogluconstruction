@@ -2,29 +2,29 @@
 
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
+const steps = [
+  { num: "01", title: "Görüş", text: "Sizinlə görüşür, arzularınızı dinləyirik. Evinizin yerini, büdcənizi və üstünlüklərinizi müəyyənləşdiririk." },
+  { num: "02", title: "Layihə", text: "Mimar heyətimiz fərdi layihə hazırlayır. 3D vizualizasiya ilə gələcək evinizi əvvəlcədən görürsünüz." },
+  { num: "03", title: "Tikinti", text: "Təcrübəli komandamız yüksək keyfiyyətlə tikinti işlərini aparır. Hər mərhələdə nəzarət." },
+  { num: "04", title: "Təhvil", text: "Açar təhvil — yeni evinizə daxil olursunuz. Keyfiyyət zəmanəti və after-sales dəstək." },
+];
+
 export default function ProcessSection() {
-  const { ref, visible } = useScrollReveal(0.1);
-  const steps = [
-    { num: "01", title: "Bünövrə", desc: "Layihələndirmə və bünövrə tökmə", time: "1-2 ay" },
-    { num: "02", title: "Konstruksiya", desc: "Skelet, divar, dam", time: "3-5 ay" },
-    { num: "03", title: "Bitirmə", desc: "Daxili təmir, fasad", time: "2-4 ay" },
-    { num: "04", title: "Açar Təhvil", desc: "Yekun yoxlama və təhvil", time: "1 həftə" },
-  ];
+  const { ref, visible } = useScrollReveal(0.05);
 
   return (
-    <section ref={ref} className="py-12 lg:py-20 bg-ink-light">
-      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
-        <div className="mb-8 lg:mb-10">
-          <div className="label mb-2">İş Prosesi</div>
-          <h2 className="heading-xl text-paper">Dörd addımda <span className="italic text-bronze">açar təhvil</span></h2>
+    <section ref={ref} className="py-12 lg:py-20 border-y border-rule">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="mb-8">
+          <div className="label mb-2">Proses</div>
+          <h2 className="heading-xl text-text-primary">Necə işləyirik</h2>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          {steps.map((s, i) => (
-            <div key={s.num} className={`rounded-xl border border-white/5 bg-white/[0.02] p-5 hover:bg-white/[0.05] transition-all duration-500 ${visible ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: `${i * 80}ms` }}>
-              <span className="font-heading text-xl text-bronze/30 font-normal block mb-2">{s.num}</span>
-              <h3 className="font-heading text-[0.9375rem] text-paper font-normal mb-1">{s.title}</h3>
-              <p className="text-[0.75rem] text-white/30 mb-2">{s.desc}</p>
-              <span className="text-[0.5625rem] font-medium tracking-wider uppercase text-bronze/50">{s.time}</span>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-rule">
+          {steps.map((step, i) => (
+            <div key={step.num} className={`bg-surface p-5 lg:p-6 transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: `${i * 80}ms` }}>
+              <span className="font-heading text-xl text-accent">{step.num}</span>
+              <h3 className="font-heading text-[0.9375rem] text-text-primary mt-2 mb-1.5">{step.title}</h3>
+              <p className="text-[0.75rem] text-text-secondary leading-relaxed">{step.text}</p>
             </div>
           ))}
         </div>

@@ -23,7 +23,7 @@ export default function ServicesPage() {
                   <br />
                   hər
                   <br />
-                  <span className="italic text-bronze">mərhələsində</span>
+                  <span className="italic text-accent">mərhələsində</span>
                 </h1>
               </div>
               <div className="lg:col-span-5 lg:col-start-8 flex items-end">
@@ -50,7 +50,7 @@ export default function ServicesPage() {
                     <span className="text-[0.65rem] font-medium">0{i + 1}</span>
                   </div>
                   <div className="sm:col-span-4 lg:col-span-4">
-                    <h2 className="heading-md lg:heading-lg text-paper group-hover:text-bronze transition-colors">
+                    <h2 className="heading-md lg:heading-lg text-paper group-hover:text-accent transition-colors">
                       {service.title}
                     </h2>
                   </div>
@@ -65,7 +65,7 @@ export default function ServicesPage() {
                     </div>
                   </div>
                   <div className="sm:col-span-2 flex items-start">
-                    <span className="inline-flex items-center gap-1.5 text-[0.6875rem] font-medium tracking-[0.06em] uppercase text-paper/20 group-hover:text-bronze transition-colors">
+                    <span className="inline-flex items-center gap-1.5 text-[0.6875rem] font-medium tracking-[0.06em] uppercase text-paper/20 group-hover:text-accent transition-colors">
                       Ətraflı
                       <svg viewBox="0 0 16 16" className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="1.5">
                         <path d="M3 8h10M10 4l3 4-3 4" />

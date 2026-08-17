@@ -26,7 +26,7 @@ export default function AboutPage() {
               <div className="lg:col-span-6">
                 <div className="label mb-3">Haqqımızda</div>
                 <h1 className="heading-xl text-paper mb-5">
-                  Keyfiyyətimiz<br /><span className="italic text-bronze">gələcəyinizdir</span>
+                  Keyfiyyətimiz<br /><span className="italic text-accent">gələcəyinizdir</span>
                 </h1>
                 <div className="space-y-3">
                   <p className="body-sm text-paper/40">Şahinoğlu Construction 2010-cu ildən Bakı və Abşeron bölgəsində premium tikinti xidmətləri göstərir.</p>
@@ -45,7 +45,7 @@ export default function AboutPage() {
         <section ref={msRef} className="bg-paper py-14 lg:py-20">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
             <h2 className="heading-xl text-ink mb-10 lg:mb-14">
-              Yol<br /><span className="italic text-bronze">xəritəmiz</span>
+              Yol<br /><span className="italic text-accent">xəritəmiz</span>
             </h2>
             <div>
               {milestones.map((m, i) => (
@@ -57,8 +57,8 @@ export default function AboutPage() {
                   style={{ transitionDelay: `${i * 100}ms` }}
                 >
                   <div className="sm:col-span-2 flex items-center gap-2">
-                    <m.Icon className="w-4 h-4 text-bronze/40" />
-                    <span className="font-heading text-xl lg:text-2xl text-bronze font-normal">{m.year}</span>
+                    <m.Icon className="w-4 h-4 text-accent/40" />
+                    <span className="font-heading text-xl lg:text-2xl text-accent font-normal">{m.year}</span>
                   </div>
                   <div className="sm:col-span-3">
                     <h3 className="heading-md text-ink">{m.title}</h3>
@@ -75,7 +75,7 @@ export default function AboutPage() {
         <section ref={certRef} className="py-14 lg:py-20">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
             <h2 className="heading-xl text-paper mb-10 lg:mb-12">
-              Niyə<br /><span className="italic text-bronze">biz?</span>
+              Niyə<br /><span className="italic text-accent">biz?</span>
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
@@ -90,7 +90,7 @@ export default function AboutPage() {
                   }`}
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
-                  <item.Icon className="w-5 h-5 text-bronze mb-4" />
+                  <item.Icon className="w-5 h-5 text-accent mb-4" />
                   <h3 className="heading-md text-paper mb-2">{item.title}</h3>
                   <p className="body-sm text-[0.8125rem] text-paper/30">{item.text}</p>
                 </div>

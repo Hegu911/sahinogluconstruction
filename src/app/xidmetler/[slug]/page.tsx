@@ -35,9 +35,9 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
         <section className="py-10 lg:py-20">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
             <nav className="flex items-center gap-1.5 text-[0.65rem] text-paper/25 mb-8 lg:mb-12">
-              <Link href="/" className="hover:text-bronze transition-colors">Ana Səhifə</Link>
+              <Link href="/" className="hover:text-accent transition-colors">Ana Səhifə</Link>
               <span>/</span>
-              <Link href="/xidmetler" className="hover:text-bronze transition-colors">Xidmətlər</Link>
+              <Link href="/xidmetler" className="hover:text-accent transition-colors">Xidmətlər</Link>
               <span>/</span>
               <span className="text-paper/50">{service.title}</span>
             </nav>
@@ -54,7 +54,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
                   {service.features.map((f) => (
                     <div key={f} className="flex items-center gap-2 py-2.5 border-b border-paper/5">
-                      <span className="w-1 h-1 bg-bronze rounded-full shrink-0" />
+                      <span className="w-1 h-1 bg-accent rounded-full shrink-0" />
                       <span className="text-[0.8125rem] text-paper/40">{f}</span>
                     </div>
                   ))}
@@ -72,14 +72,14 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                     <div className="label mb-4">Zəmanət</div>
                     <div className="space-y-3">
                       <div className="flex items-start gap-2.5">
-                        <ShieldIcon className="w-4 h-4 text-bronze shrink-0 mt-0.5" />
+                        <ShieldIcon className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                         <div>
                           <div className="text-[0.8125rem] font-medium text-paper/70">10 il struktur zəmanəti</div>
                           <div className="text-[0.6875rem] text-paper/25 mt-0.5">Bünövrə və konstruksiya</div>
                         </div>
                       </div>
                       <div className="flex items-start gap-2.5">
-                        <CalendarIcon className="w-4 h-4 text-bronze shrink-0 mt-0.5" />
+                        <CalendarIcon className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                         <div>
                           <div className="text-[0.8125rem] font-medium text-paper/70">3 il tam təmir zəmanəti</div>
                           <div className="text-[0.6875rem] text-paper/25 mt-0.5">Daxili bitirmə işləri</div>
@@ -96,7 +96,7 @@ export default function ServiceDetailPage({ params }: { params: Promise<{ slug: 
                           <Link key={p.id} href={`/layiheler/${p.id}`} className="flex items-center gap-3 group">
                             <img src={p.heroImage} alt={p.title} className="w-14 h-10 object-cover rounded-lg shrink-0" />
                             <div>
-                              <div className="text-[0.8125rem] font-medium text-paper/70 group-hover:text-bronze transition-colors">{p.title}</div>
+                              <div className="text-[0.8125rem] font-medium text-paper/70 group-hover:text-accent transition-colors">{p.title}</div>
                               <div className="flex items-center gap-1 text-[0.65rem] text-paper/25 mt-0.5">
                                 <MapPinIcon className="w-2.5 h-2.5" />{p.location}
                               </div>

@@ -37,9 +37,9 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-8 lg:p-10 max-w-[1400px] mx-auto">
             <nav className="flex items-center gap-1.5 text-[0.6rem] text-paper/25 mb-3">
-              <Link href="/" className="hover:text-bronze transition-colors">Ana Səhifə</Link>
+              <Link href="/" className="hover:text-accent transition-colors">Ana Səhifə</Link>
               <span>/</span>
-              <Link href="/layiheler" className="hover:text-bronze transition-colors">Layihələr</Link>
+              <Link href="/layiheler" className="hover:text-accent transition-colors">Layihələr</Link>
               <span>/</span>
               <span className="text-paper/50">{project.title}</span>
             </nav>
@@ -117,7 +117,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                     <Link key={p.id} href={`/layiheler/${p.id}`} className="group flex items-center gap-3 p-3 lg:p-4 rounded-2xl bg-paper/[0.03] hover:bg-paper/[0.06] transition-colors">
                       <img src={p.heroImage} alt={p.title} className="w-16 h-12 object-cover rounded-lg shrink-0" />
                       <div className="flex-1 min-w-0">
-                        <div className="text-[0.8125rem] font-medium text-paper/70 group-hover:text-bronze transition-colors truncate">{p.title}</div>
+                        <div className="text-[0.8125rem] font-medium text-paper/70 group-hover:text-accent transition-colors truncate">{p.title}</div>
                         <div className="text-[0.65rem] text-paper/25 mt-0.5">{p.area} m² · {p.year}</div>
                       </div>
                       <ArrowRight className="w-3.5 h-3.5 text-paper/20 shrink-0" />

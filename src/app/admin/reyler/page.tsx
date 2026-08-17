@@ -14,7 +14,7 @@ export default function AdminReviewsPage() {
   useEffect(() => { if (typeof window !== "undefined" && !localStorage.getItem("admin_auth")) router.push("/admin/login"); }, [router]);
   const handleDelete = (i: number) => setReviews((prev) => prev.filter((_, idx) => idx !== i));
   const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); setReviews((prev) => [...prev, { ...form, image: form.image || "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80", projectImage: form.projectImage || "" }]); setForm({ name: "", projectTitle: "", text: "", image: "", projectImage: "" }); setShowForm(false); };
-  const ic = "w-full px-2.5 py-2 bg-paper border border-border text-ink text-[0.8125rem] rounded-[1px] focus:outline-none focus:border-bronze";
+  const ic = "w-full px-2.5 py-2 bg-paper border border-border text-ink text-[0.8125rem] rounded-[1px] focus:outline-none focus:border-accent";
 
   return (
     <div>

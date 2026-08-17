@@ -24,7 +24,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <nav className="p-3 flex-1">
           {links.map((link) => {
             const active = link.exact ? pathname === link.href : pathname.startsWith(link.href);
-            return <Link key={link.href} href={link.href} className={`block px-3 py-2 text-[0.8125rem] rounded-[1px] mb-0.5 transition-colors ${active ? "bg-bronze/15 text-bronze-light" : "text-text-muted hover:text-paper hover:bg-ink-light"}`}>{link.label}</Link>;
+            return <Link key={link.href} href={link.href} className={`block px-3 py-2 text-[0.8125rem] rounded-[1px] mb-0.5 transition-colors ${active ? "bg-accent/15 text-accent-light" : "text-text-muted hover:text-paper hover:bg-ink-light"}`}>{link.label}</Link>;
           })}
         </nav>
         <div className="p-3 border-t border-ink-light">

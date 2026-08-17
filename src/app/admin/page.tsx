@@ -22,7 +22,7 @@ export default function AdminDashboard() {
           { label: "Müraciətlər", count: 0, href: "/admin/muracietler" },
         ].map((stat) => (
           <Link key={stat.label} href={stat.href} className="bg-paper p-5 hover:bg-paper-dark transition-colors">
-            <div className="font-heading text-2xl text-bronze font-normal">{stat.count}</div>
+            <div className="font-heading text-2xl text-accent font-normal">{stat.count}</div>
             <div className="text-[0.65rem] font-medium tracking-[0.06em] uppercase text-text-muted mt-1">{stat.label}</div>
           </Link>
         ))}

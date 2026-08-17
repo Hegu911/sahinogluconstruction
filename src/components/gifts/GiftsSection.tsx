@@ -15,22 +15,22 @@ export default function GiftsSection() {
 
   return (
     <section ref={ref} className="py-12 lg:py-20">
-      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
-        <div className="flex items-end justify-between mb-6 lg:mb-8">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-8 lg:px-10">
+        <div className="flex items-end justify-between mb-8">
           <div>
             <div className="label mb-2">Xüsusi Təkliflər</div>
-            <h2 className="heading-xl text-paper">Hədiyyələr</h2>
+            <h2 className="heading-xl text-text-primary">Hədiyyələr</h2>
           </div>
         </div>
-        <div className="flex gap-3 overflow-x-auto scrollbar-hide -mx-5 px-5 sm:mx-0 sm:px-0 lg:overflow-visible">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-rule">
           {gifts.map((card, i) => (
-            <div key={card.title} className={`shrink-0 w-[240px] sm:w-auto sm:flex-1 rounded-xl border border-white/5 bg-white/[0.03] p-5 transition-all duration-500 hover:bg-white/[0.06] hover:border-white/10 ${visible ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: `${i * 60}ms` }}>
+            <div key={card.title} className={`bg-surface p-5 lg:p-6 transition-all duration-300 hover:bg-surface-light ${visible ? "opacity-100" : "opacity-0"}`} style={{ transitionDelay: `${i * 60}ms` }}>
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-7 h-7 rounded-lg bg-bronze/10 flex items-center justify-center"><card.Icon className="w-3.5 h-3.5 text-bronze" /></div>
-                <span className="text-[0.5625rem] text-white/20 font-medium">{card.num}</span>
+                <card.Icon className="w-3.5 h-3.5 text-accent" />
+                <span className="text-[0.5625rem] text-text-muted font-medium">{card.num}</span>
               </div>
-              <h3 className="font-heading text-[0.9375rem] text-paper mb-1.5 font-normal">{card.title}</h3>
-              <p className="text-[0.75rem] text-white/30 leading-relaxed">{card.description}</p>
+              <h3 className="font-heading text-[0.9375rem] text-text-primary mb-1.5">{card.title}</h3>
+              <p className="text-[0.75rem] text-text-secondary leading-relaxed">{card.description}</p>
             </div>
           ))}
         </div>

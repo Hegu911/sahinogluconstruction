@@ -32,7 +32,7 @@ export default function ProjectsPage() {
                 <h1 className="heading-xl text-paper">
                   Tamamlanmış
                   <br />
-                  <span className="italic text-bronze">obyektlər</span>
+                  <span className="italic text-accent">obyektlər</span>
                 </h1>
               </div>
               <div className="lg:col-span-4 flex items-end">
@@ -47,7 +47,7 @@ export default function ProjectsPage() {
                   onClick={() => setActive(cat.slug)}
                   className={`px-4 py-2 text-[0.6875rem] font-medium tracking-[0.06em] uppercase border rounded-full transition-all shrink-0 ${
                     active === cat.slug
-                      ? "bg-bronze text-ink border-bronze"
+                      ? "bg-accent text-ink border-accent"
                       : "bg-transparent text-paper/30 border-paper/10 hover:border-paper/30"
                   }`}
                 >
