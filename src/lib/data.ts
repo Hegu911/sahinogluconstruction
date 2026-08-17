@@ -1,0 +1,261 @@
+import { Project, Service, Testimonial, GiftCard } from "./types";
+
+export const COMPANY = {
+  name: "ŞAHİNOĞLU CONSTRUCTION",
+  slogan: "Keyfiyyətimiz gələcəyinizdir",
+  phone: "+994 70 555 27 26",
+  phoneRaw: "+994705552726",
+  whatsapp: "https://wa.me/994705552726",
+  email: "info@sahinoglu.az",
+  address: "Bakı ş., Abşeron rayonu, Xırdalan",
+  instagram: "https://instagram.com/shahinoglu_construction",
+  workingHours: "B.e — Cümə: 09:00 — 18:00",
+  yearsExperience: 14,
+  completedProjects: 127,
+  totalArea: 48500,
+  happyClients: 96,
+};
+
+export const NAV_LINKS = [
+  { href: "/", label: "Ana Səhifə" },
+  { href: "/xidmetler", label: "Xidmətlər" },
+  { href: "/layiheler", label: "Layihələr" },
+  { href: "/haqqimizda", label: "Haqqımızda" },
+  { href: "/elaqe", label: "Əlaqə" },
+];
+
+export const SERVICES: Service[] = [
+  {
+    slug: "ferdi-ev",
+    title: "Fərdi Ev Tikintisi",
+    description: "Layihələndirmədən açar təhvilinə — tam dövr. Siz sadəcə arzunuzu deyin, biz həyata keçirək.",
+    fullDescription: "Fərdi ev tikintisi xidmətimiz çərçivəsində sizin üçün ideal məkanı layihələndiririk, keyfiyyətli materiallarla tikirik və açar təhvil edirik. Hər mərhələdə şəffaf kommunikasiya, dəqiq büdcə və vaxt planlaması təmin edirik. 14 illik təcrübəmizə əsaslanaraq, Bakı və Abşeron bölgəsində 100-dən çox fərdi ev layihəsi həyata keçirmişik.",
+    features: [
+      "Pulsuz ilkin konsultasiya",
+      "Layihələndirmə və 3D vizuallaşdırma",
+      "Material seçimi və təchizat",
+      "Bünövrədən dam örtüyünə tam tikinti",
+      "Daxili təmir və bitirmə işləri",
+      "Açar təhvil",
+    ],
+    icon: "house",
+  },
+  {
+    slug: "villa",
+    title: "Villa Layihələndirmə",
+    description: "Premium villa layihələri — memarlıq, daxili məkan dizaynı və landşaft planlaması bir arada.",
+    fullDescription: "Villa layihələndirmə xidmətimiz premium səviyyədə həyata keçirilir. Hər villa fərdi dizayn olunur, sahibinin həyat tərzinə və zövqünə uyğunlaşdırılır. Müasir arxitektura həlləri, enerji-effektiv texnologiyalar və premium materiallar istifadə edirik. Layihələrimiz arasında Bakıda, Abşeron və Quba-Qusar bölgəsində yerləşən villalar var.",
+    features: [
+      "Fərdi arxitektura dizaynı",
+      "3D vizuallaşdırma və vizualizasiya",
+      "Daxili məkan dizaynı",
+      "Landşaft planlaması",
+      "Ağıllı ev texnologiyaları",
+      "Lüks material seçimi",
+    ],
+    icon: "villa",
+  },
+  {
+    slug: "renovasiya",
+    title: "Təmir / Renovasiya",
+    description: "Köhnə binaya yeni həyat. Tam təmir, qismi yeniləmə və ya kosmetik yeniləmə — seçim sizindir.",
+    fullDescription: "Təmir və renovasiya xidmətimiz köhnə və ya半yad qalmış binalara yeni həyat verir. Biz yalnız estetik yeniləmə deyil, struktur gücləndirmə, izolyasiya, elektrik və santexnika yeniləməsi də həyata keçiririk. Hər büdcəyə uyğun həll variantları təklif edirik.",
+    features: [
+      "Kosmetik təmir",
+      "Kapital təmir və renovasiya",
+      "Struktur gücləndirmə",
+      "Elektrik və santexnika yenilənməsi",
+      "Daxili interyer yenilənməsi",
+      "Enerji izolyasiyası",
+    ],
+    icon: "renovation",
+  },
+  {
+    slug: "acar-tehvil",
+    title: "Açar Təhvili",
+    description: "Hazır layihələr — seçin, daxil olun. Tikinti ilə məşğul olmağa ehtiyac yoxdur.",
+    fullDescription: "Açar təhvili xidməti ilə biz hazır tikilmiş, tam keyfiyyətli obyektləri sizə təqdim edirik. Siz sadəcə layihəni seçir, daxili dizaynı müəyyən edir və açarınızı alırsınız. Bu xidmət vaxtınıza qənaət edir və tikinti prosesinin bütün stresslərindən sizi azad edir.",
+    features: [
+      "Hazır layihələr kataloqu",
+      "Daxili dizayn seçim imkanı",
+      "Keyfiyyət zəmanəti",
+      "Müqavilə əsasında təhvil",
+      "After-sale dəstək",
+      "Zəmanət müddəti",
+    ],
+    icon: "key",
+  },
+];
+
+export const PROCESS_STEPS = [
+  {
+    step: "01",
+    title: "Bünövrə",
+    description: "Layihələndirmə, icazələr və bünövrə tökmə",
+    duration: "1-2 ay",
+  },
+  {
+    step: "02",
+    title: "Konstruksiya",
+    description: "Skelet, divar, dam və texniki sistemlər",
+    duration: "3-5 ay",
+  },
+  {
+    step: "03",
+    title: "Bitirmə İşləri",
+    description: "Daxili təmir, fasad, landşaft",
+    duration: "2-4 ay",
+  },
+  {
+    step: "04",
+    title: "Açar Təhvil",
+    description: "Yekun yoxlama, sənədlər və açar təhvil",
+    duration: "1 həftə",
+  },
+];
+
+export const PROJECTS: Project[] = [
+  {
+    id: "villa-1",
+    title: "Villa «Sahil»",
+    location: "Abşeron, Şüvalan",
+    area: 320,
+    rooms: 5,
+    year: 2024,
+    duration: "8 ay",
+    category: "villa",
+    description: "Müasir üslubda tikilmiş 320 m² sahəyə malik villa. 5 otaq, açıq plan mətbəx,uzzi hovuz, landşaft dizaynı. Tam avtomatlaşdırılmış ağıllı ev sistemi.",
+    heroImage: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+    ],
+    beforeImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    afterImage: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+  },
+  {
+    id: "ferdi-ev-1",
+    title: "Fərdi Ev «Tuncay»",
+    location: "Bakı, Zhig",
+    area: 185,
+    rooms: 4,
+    year: 2023,
+    duration: "6 ay",
+    category: "ferdi-ev",
+    description: "Klassik üslubda 4 otaqlı fərdi ev. 185 m² sahə, cənub istiqamətində baxış, tam təmirli.",
+    heroImage: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+    ],
+    beforeImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    afterImage: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+  },
+  {
+    id: "villa-2",
+    title: "Villa «Qızıl»",
+    location: "Quba, Zərnava",
+    area: 450,
+    rooms: 7,
+    year: 2024,
+    duration: "11 ay",
+    category: "villa",
+    description: "Dağ mənzərəli 450 m² premium villa. 7 otaq, hovuz, sauna, qaraj. Tam landşaft və avtomatlaşdırma.",
+    heroImage: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+    ],
+    beforeImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    afterImage: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+  },
+  {
+    id: "renovasiya-1",
+    title: "Renovasiya «Nərimanov»",
+    location: "Bakı, Nərimanov r.",
+    area: 110,
+    rooms: 3,
+    year: 2023,
+    duration: "3 ay",
+    category: "renovasiya",
+    description: "Kapital renovasiya — 1990-cı illərdə tikilmiş binada tam daxili yeniləmə. Yeni elektrik, santexnika, interyer.",
+    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+    ],
+    beforeImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    afterImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+  },
+  {
+    id: "ferdi-ev-2",
+    title: "Fərdi Ev «Gənclik»",
+    location: "Abşeron, Saray",
+    area: 220,
+    rooms: 5,
+    year: 2024,
+    duration: "7 ay",
+    category: "ferdi-ev",
+    description: "Müasir minimalizm üslubunda 5 otaqlı fərdi ev. Açıq plan layout, böyük şüşə səthlər, minimalist interyer.",
+    heroImage: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+    ],
+    beforeImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    afterImage: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80",
+  },
+];
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    name: "Əli Həsənov",
+    projectTitle: "Villa «Sahil» sahibi",
+    text: "Şahinoğlu komandası ilə işləmək çox rahat idi. Hər mərhələdə məlumatlandırdılar, vaxtlarına əməl etdilər. Nəticə gözləntilərimizi üstələdi. Hovuz və landşaft işləri xüsusilə əla oldu.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80",
+    projectImage: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=200&q=80",
+  },
+  {
+    name: "Leyla Məmmədova",
+    projectTitle: "Fərdi Ev «Tuncay» sahibi",
+    text: "Evimizi 6 ayda tamamladılar — dəqiq plandakı kimi. Material keyfiyyəti çox yaxşıdır, qiymət isə əvvəldən razılaşdırılmışdı, heç bir əlavə xərc çıxmadı.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80",
+    projectImage: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=200&q=80",
+  },
+  {
+    name: "Rəşad Quliyev",
+    projectTitle: "Villa «Qızıl» sahibi",
+    text: "Dağ evi layihəmiz çox mürəkkəb idi — relyef, iqlim, material daşınması. Şahinoğlu bunların hamısını idarə etdi. 450 m² villa 11 ayda tamamlandı. Peşəkarlıq.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=120&q=80",
+    projectImage: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=200&q=80",
+  },
+];
+
+export const GIFT_CARDS: GiftCard[] = [
+  {
+    title: "Layihə Hədiyyə",
+    description: "Fərdi ev layihələndirməsi pulsuz — standart paketlərlə məhdudlaşmayın, arzunuzdakı evi birlikdə dizayn edək.",
+    icon: "drafting",
+  },
+  {
+    title: "Smeta Hədiyyə",
+    description: "Dəqiq smeta hesablaması — büdcənizi bilmədən addım atmayın. Tam şəffaf qiymət.",
+    icon: "calculator",
+  },
+  {
+    title: "Kombi Bizdən",
+    description: "İstilik sistemi + kombi + quraşdırma — evinizin isti sistemi bizdən hədiyyə.",
+    icon: "heating",
+  },
+  {
+    title: "Açar Hazır Evlər",
+    description: "Hazır villa və evlərimiz —选择in, daxil olun. Tikinti gözləməyə ehtiyac yox.",
+    icon: "keyhand",
+  },
+];
