@@ -24,7 +24,7 @@ export default function ProjectsPage() {
   return (
     <>
       <Header />
-      <main className="pt-14 lg:pt-16">
+      <main className="pt-16 lg:pt-20">
         <section className="py-10 lg:py-20">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 mb-8 lg:mb-12">

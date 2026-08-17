@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6">
             <div className="lg:col-span-5">
               <div className="mb-4 flex items-center gap-2.5">
-                <img src="/image.png" alt="Şahinoğlu" className="h-10 w-auto brightness-0 invert" />
+                <img src="/image.png" alt="Şahinoğlu" className="h-14 w-auto brightness-0 invert" />
                 <span className="inline-flex flex-col leading-none font-heading tracking-tight font-normal uppercase">
                   <span className="text-bronze text-base">Şahinoğlu</span>
                   <span className="text-paper text-[0.65rem] tracking-[0.15em]">Construction</span>

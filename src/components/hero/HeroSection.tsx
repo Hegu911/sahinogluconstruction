@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section className="min-h-[100dvh] flex flex-col">
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-12">
-        <div className="lg:col-span-7 flex flex-col justify-end px-5 sm:px-8 lg:px-10 pb-8 lg:pb-16 pt-20 lg:pt-32">
+        <div className="lg:col-span-7 flex flex-col justify-end px-5 sm:px-8 lg:px-10 pb-8 lg:pb-16 pt-24 lg:pt-36">
           <div className="label mb-3 lg:mb-5">Tikinti · Layihələndirmə · Təmir</div>
           <h1 className="heading-display text-ink mb-4 lg:mb-6 max-w-[520px]">
             Bünövrədən

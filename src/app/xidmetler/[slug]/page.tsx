@@ -19,7 +19,7 @@ export default function ServiceDetailPage({
     return (
       <>
         <Header />
-        <main className="pt-14 lg:pt-16 flex items-center justify-center min-h-screen">
+        <main className="pt-16 lg:pt-20 flex items-center justify-center min-h-screen">
           <div className="text-center px-5">
             <h1 className="heading-lg mb-4">Xidmət tapılmadı</h1>
             <Link href="/xidmetler" className="btn-ghost">Qayıt</Link>
@@ -37,7 +37,7 @@ export default function ServiceDetailPage({
   return (
     <>
       <Header />
-      <main className="pt-14 lg:pt-16">
+      <main className="pt-16 lg:pt-20">
         <section className="py-10 lg:py-20">
           <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
             <nav className="flex items-center gap-1.5 text-[0.65rem] text-text-muted mb-8 lg:mb-12">

@@ -19,7 +19,7 @@ export default function ProjectDetailPage({
     return (
       <>
         <Header />
-        <main className="pt-14 lg:pt-16 flex items-center justify-center min-h-screen">
+        <main className="pt-16 lg:pt-20 flex items-center justify-center min-h-screen">
           <div className="text-center px-5">
             <h1 className="heading-lg mb-4">Layihə tapılmadı</h1>
             <Link href="/layiheler" className="btn-ghost">Qayıt</Link>
@@ -35,7 +35,7 @@ export default function ProjectDetailPage({
   return (
     <>
       <Header />
-      <main className="pt-14 lg:pt-16">
+      <main className="pt-16 lg:pt-20">
         <section className="relative h-[35vh] sm:h-[40vh] lg:h-[45vh] min-h-[240px]">
           <img src={project.heroImage} alt={project.title} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
